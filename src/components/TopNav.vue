@@ -42,9 +42,12 @@ export default {
 
 .top-nav {
   width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
   border-bottom: 1px solid $color-accent;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
 }
 

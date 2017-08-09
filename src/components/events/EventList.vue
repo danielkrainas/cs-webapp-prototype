@@ -30,6 +30,12 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
+.event-list-container {
+  overflow-y: auto;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
 .event-list {
   display: flex;
   flex-wrap: wrap;
