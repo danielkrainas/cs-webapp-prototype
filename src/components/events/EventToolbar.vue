@@ -86,6 +86,7 @@ export default {
   margin: 0 8px;
   background-color: $color-form-background;
   color: $color-font-default;
+  border-color: $color-accent;
 }
 
 .option-grid-view,
