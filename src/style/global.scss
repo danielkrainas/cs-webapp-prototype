@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+$color-font-default: #555;
+
 body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  color: $color-font-default;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+}
+
+a {
+  &:link,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
 }

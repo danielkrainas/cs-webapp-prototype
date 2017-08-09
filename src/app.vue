@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app-container">
     <top-nav></top-nav>
   </div>
 </template>
@@ -21,10 +21,12 @@ export default {
 
 <style lang="scss" scoped>
 
-$bgcolor: #f00;
+$color-app-bg: #eee;
 
-#app {
-  background-color: $bgcolor;
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-app-bg;
 }
 
 </style>
