@@ -7,6 +7,9 @@
         </a>
       </li>
     </ol>
+    <div class="help nav-item">
+      Help
+    </div>
   </div>
 </template>
 
