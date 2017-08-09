@@ -1,12 +1,16 @@
 <template>
   <div class="folder-images-grid">
     <div class="folder-images-toolbar">
+      <div class="upload-button button">
+        <span class="fa fa-upload"></span>
+        <span>Upload Images</span>
+      </div>
       <div class="folder-name">
         Folder Name
       </div>
       <div class="folder-tools">
         <ol class="filter-tags">
-          <li v-for="tag in tags">
+          <li v-for="tag in tags" class="button">
             <span class="fa fa-circle-o filter-item" v-bind:class="tag.class"></span>
           </li>
         </ol>
@@ -67,7 +71,10 @@ export default {
 
 .filter-item {
   color: $color-accent;
-  margin-left: 5px;
+
+  &.fa {
+    margin-right: 0;
+  }
 }
 
 .folder-name {
