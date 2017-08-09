@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    image: fnichol/docker-uhttpd
+    volumes:
+      - ./html:/www
+    ports:
+      - "80:80"

@@ -1,0 +1,9 @@
+extends: standard
+
+plugins:
+  - standard
+  - promise
+  - html
+
+env:
+  browser: true
