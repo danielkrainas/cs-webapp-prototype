@@ -4,11 +4,9 @@
   </div>
 </template>
 
-
 <style scoped>
-
-.top-nav {
-  width: 100%;
-  border: 1px solid #333;
-}
+  .top-nav {
+    width: 100%;
+    border: 1px solid #333;
+  }
 </style>
