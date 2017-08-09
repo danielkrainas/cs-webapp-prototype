@@ -1,15 +1,18 @@
 <template>
   <div class="events">
-    <event-list></event-list>
+    <!-- <event-list></event-list> -->
+    <single-event></single-event>
   </div>
 </template>
 
 <script>
 import eventList from './EventList.vue'
+import singleEvent from './SingleEvent.vue'
 
 export default {
   components: {
     eventList,
+    singleEvent,
   },
   data () {
     return {

@@ -39,6 +39,8 @@ button {
   }
 }
 
+// Generic classes
+
 .icon-placeholder {
   background-color: $color-accent;
   height: 16px;
@@ -49,8 +51,45 @@ button {
   transition: background-color 0.2s;
   padding: 10px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+
+  .fa {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  &.icon {
+    font-size: 20px;
+  }
 
   &:hover {
     background-color: $color-button-hover-bg;
   }
+}
+
+$layout-toolbar-height: 50px;
+
+.toolbar {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  border-bottom: 1px solid $color-accent;
+  position: relative;
+  height: $layout-toolbar-height;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+$subnav-width: 240px;
+
+.subnav {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid $color-accent;
+  width: $subnav-width;
 }

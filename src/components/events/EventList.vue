@@ -1,6 +1,6 @@
 <template>
   <div class="event-list-container">
-    <div class="event-toolbar">
+    <div class="toolbar">
       <div class="toolbar-left">
         <div class="add-event">
           <span class="fa fa-plus-square button"></span>
@@ -98,17 +98,6 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 50px;
-}
-
-.event-toolbar {
-  padding: 10px 15px;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  border-bottom: 1px solid $color-accent;
-  position: relative;
 }
 
 .add-event {
