@@ -38,9 +38,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../style/colors';
+
 .top-nav {
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $color-accent;
   display: flex;
   align-items: flex-end;
   padding: 10px;
@@ -58,7 +60,7 @@ export default {
   border-radius: 5px;
 
   &:hover {
-    background-color: #ccc;
+    background-color: $color-accent;
   }
 }
 </style>
