@@ -1,4 +1,7 @@
+$color-app-bg: #eee;
+$color-button-hover-bg: darken($color-app-bg, 10%);
 $color-accent: #ccc;
 $color-block-placeholder: #fff;
-
+$color-icon: $color-accent;
 $color-font-default: #555;
+$color-form-background: #fff;

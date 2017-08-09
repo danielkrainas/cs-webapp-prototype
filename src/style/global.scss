@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
 @import 'colors';
 
 body {
@@ -10,10 +12,47 @@ body {
   margin: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+// stylelint-disable
+// sass-lint:disable-all
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+// stylelint-enable
+// sass-lint:enable-all
+
 a {
   &:link,
   &:active {
     text-decoration: none;
     color: inherit;
+  }
+}
+
+input,
+select,
+textarea,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.icon-placeholder {
+  background-color: $color-accent;
+  height: 16px;
+  width: 16px;
+}
+
+.button {
+  transition: background-color 0.2s;
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-button-hover-bg;
   }
 }

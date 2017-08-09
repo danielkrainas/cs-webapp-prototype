@@ -1,12 +1,12 @@
 <template>
   <div class="top-nav">
-    <ul class="nav-list">
+    <ol class="nav-list">
       <li v-for="item in navItems" class="nav-item">
         <a v-bind:href="item.link">
           {{ item.title }}
         </a>
       </li>
-    </ul>
+    </ol>
   </div>
 </template>
 
@@ -60,7 +60,7 @@ export default {
   border-radius: 5px;
 
   &:hover {
-    background-color: $color-accent;
+    background-color: $color-button-hover-bg;
   }
 }
 </style>
