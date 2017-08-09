@@ -1,12 +1,18 @@
 <template>
   <div class="event-list-container">
     <div class="event-toolbar">
-      <div class="search">
-        <span class="fa fa-search search-icon"></span>
-        <input class="search-box" placeholder="Search Events">
-        </input>
+      <div class="toolbar-left">
+        <div class="add-event">
+          <span class="fa fa-plus-square button"></span>
+          <span>New Event</span>
+        </div>
+        <div class="search">
+          <span class="fa fa-search search-icon"></span>
+          <input class="search-box" placeholder="Search Events">
+          </input>
+        </div>
       </div>
-      <div class="controls">
+      <div class="toolbar-right">
         <span>Sort By</span>
         <select class="sort-by">
           <option v-for="option in sortOptions" v-bind:value="option.key">
@@ -43,15 +49,15 @@ export default {
       sortOptions: [
         {
           key: 'name',
-          display: 'Event Name',
+          display: 'Name',
         },
         {
           key: 'dateDesc',
-          display: 'Event Date (newest first)',
+          display: 'Date (newest first)',
         },
         {
           key: 'dateAsc',
-          display: 'Event Date (oldest first)',
+          display: 'Date (oldest first)',
         },
       ],
     }
@@ -96,12 +102,34 @@ export default {
 
 .event-toolbar {
   padding: 10px 15px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
   border-bottom: 1px solid $color-accent;
   position: relative;
+}
+
+.add-event {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  transition: background-color 0.2s ease;
+  padding: 10px;
+
+  &:hover {
+    background-color: $color-button-hover-bg;
+  }
+
+  .button {
+    font-size: 20px;
+    padding: 0 10px 0 0;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
 }
 
 .search {
@@ -126,7 +154,8 @@ export default {
   color: $color-accent;
 }
 
-.controls {
+.toolbar-left,
+.toolbar-right {
   display: flex;
   align-items: center;
 }
