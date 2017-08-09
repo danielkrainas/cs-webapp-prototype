@@ -102,7 +102,7 @@ export default {
 
 .event-toolbar {
   padding: 10px 15px;
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
