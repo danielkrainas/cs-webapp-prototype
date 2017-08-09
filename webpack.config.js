@@ -6,8 +6,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js',
+    publicPath: '/build/',
+    filename: 'app.js',
   },
   plugins: [new HtmlWebpackPlugin({
     name: 'CloudSpot',
