@@ -3,8 +3,7 @@
     <single-event-toolbar :event-name="'Event ' + this.eventId"></single-event-toolbar>
     <div class="content">
       <single-event-subnav></single-event-subnav>
-      <folder-images-grid></folder-images-grid>
-      <!-- <single-gallery></single-gallery> -->
+      <router-view name="eventDetails"></router-view>
     </div>
   </div>
 </template>
@@ -12,15 +11,11 @@
 <script>
 import singleEventToolbar from './SingleEventToolbar.vue'
 import singleEventSubnav from './SingleEventSubnav.vue'
-import folderImagesGrid from './FolderImagesGrid.vue'
-import singleGallery from './SingleGallery.vue'
 
 export default {
   components: {
     singleEventToolbar,
     singleEventSubnav,
-    folderImagesGrid,
-    singleGallery,
   },
   props: ['eventId'],
 

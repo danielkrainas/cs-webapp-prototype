@@ -2,7 +2,7 @@
   <div class="top-nav">
     <ol class="nav-list">
       <li v-for="item in navItems" class="nav-item">
-        <router-link :to="item.link">
+        <router-link :to="{ name: item.route }">
           {{ item.title }}
         </router-link>
       </li>
@@ -20,19 +20,19 @@ export default {
       navItems: [
         {
           title: 'Events',
-          link: '/events',
+          route: 'eventList',
         },
         {
           title: 'Store',
-          link: '/store',
+          route: 'store',
         },
         {
           title: 'People',
-          link: '/people',
+          route: 'people',
         },
         {
           title: 'Account',
-          link: '/account',
+          route: 'account',
         },
       ],
     }

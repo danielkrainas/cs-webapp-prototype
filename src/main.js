@@ -4,9 +4,18 @@ import App from './App.vue'
 import ToggleButton from 'vue-js-toggle-button'
 
 import account from './components/account/Account.vue'
+
 import events from './components/events/Events.vue'
 import eventList from './components/events/EventList.vue'
 import singleEvent from './components/events/SingleEvent.vue'
+import folderImagesGrid from './components/events/FolderImagesGrid.vue'
+
+import galleryList from './components/galleries/GalleryList.vue'
+import singleGallery from './components/galleries/SingleGallery.vue'
+
+import analyticsOverview from './components/analytics/Overview.vue'
+import analyticsFavorites from './components/analytics/Favorites.vue'
+import analyticsVisitors from './components/analytics/Visitors.vue'
 
 import people from './components/people/People.vue'
 import store from './components/store/Store.vue'
@@ -14,41 +23,76 @@ import store from './components/store/Store.vue'
 Vue.use(ToggleButton)
 Vue.use(VueRouter)
 
-const routes = [
-  { path: '/account', component: account },
-  {
-    path: '/events',
-    components: {
-      default: events,
-      eventsContent: eventList,
-    },
-    children: [
-      // Events List
-      {
-        path: '',
-        components: {
-          default: events,
-          eventsContent: eventList,
+/* eslint-disable indent */
+const routes = [{
+  path: '/account',
+  name: 'account',
+  component: account,
+}, {
+  path: '/events',
+  components: { default: events },
+  children: [{
+      path: '',
+      redirect: '/events/list',
+    }, {
+      path: 'list',
+      name: 'eventList',
+      components: { eventsContent: eventList },
+    }, {
+      path: ':eventId',
+      name: 'singleEvent',
+      components: { eventsContent: singleEvent },
+      props: { eventsContent: true },
+      children: [{
+          path: '',
+          redirect: 'images',
+        }, {
+          path: 'images',
+          name: 'eventImages',
+          components: { eventDetails: folderImagesGrid },
+          children: [{
+            path: ':folderId',
+            name: 'folderImages',
+            components: { eventDetails: folderImagesGrid },
+            props: { eventDetails: true },
+          }],
+        }, {
+          path: 'galleries',
+          name: 'galleryList',
+          components: { eventDetails: galleryList },
+        }, {
+          path: 'galleries/:galleryId',
+          name: 'singleGallery',
+          components: { eventDetails: singleGallery },
+          props: { eventDetails: true },
+        }, {
+          path: 'overview',
+          name: 'analyticsOverview',
+          components: { eventDetails: analyticsOverview },
+          props: { eventDetails: true },
+        }, {
+          path: 'visitors',
+          name: 'analyticsVisitors',
+          components: { eventDetails: analyticsVisitors },
+          props: { eventDetails: true },
+        }, {
+          path: 'favorites',
+          name: 'analyticsFavorites',
+          components: { eventDetails: analyticsFavorites },
+          props: { eventDetails: true },
         },
-      },
-
-      // Single Event
-      {
-        path: ':eventId',
-        components: {
-          default: events,
-          eventsContent: singleEvent,
-        },
-        props: {
-          default: false,
-          eventsContent: true,
-        },
-      },
     ],
-  },
-  { path: '/people', component: people },
-  { path: '/store', component: store },
-]
+  }],
+}, {
+  path: '/people',
+  name: 'people',
+  component: people,
+}, {
+  path: '/store',
+  name: 'store',
+  component: store,
+}]
+/* eslint-enable indent */
 
 const router = new VueRouter({
   routes,
