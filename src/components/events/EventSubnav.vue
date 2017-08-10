@@ -16,7 +16,7 @@
     </router-link>
     <ol class="subnav-list">
       <li v-for="gallery in galleries" class="subnav-item">
-        <router-link :to="{ name: 'singleGallery', params: { galleryId: gallery.id }}">
+        <router-link :to="{ name: 'gallerySingle', params: { galleryId: gallery.id }}">
           <span>{{ gallery.name }}</span>
         </router-link>
       </li>
