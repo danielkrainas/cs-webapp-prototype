@@ -13,12 +13,12 @@
     </div>
     <div class="toolbar-section right">
       <div class="button">
-        <span class="fa fa-share button"></span>
-        <span>Share</span>
+        <span class="fa fa-share"></span>
+        <span class="button-title">Share</span>
       </div>
       <div class="button">
-        <span class="fa fa-cog button"></span>
-        <span>Event Settings</span>
+        <span class="fa fa-cog"></span>
+        <span class="button-title">Event Settings</span>
       </div>
     </div>
   </div>
@@ -59,6 +59,19 @@ export default {
 
 .event-name {
   font-size: 22px;
+}
+
+@media screen and (max-width: 800px) {
+  .button-title {
+    width: 0;
+    opacity: 0;
+  }
+
+  .right {
+    .fa {
+      margin-right: 0;
+    }
+  }
 }
 
 </style>
