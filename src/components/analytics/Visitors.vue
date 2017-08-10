@@ -1,6 +1,6 @@
 <template>
-  <div class="people stub">
-    <h1>People Section</h1>
+  <div class="visitors stub">
+    <h1>Visitors: Favorites</h1>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="account">
+  <div class="account stub">
     <h1>Account Section</h1>
   </div>
 </template>

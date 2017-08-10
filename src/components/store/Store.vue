@@ -1,5 +1,5 @@
 <template>
-  <div class="store">
+  <div class="store stub">
     <h1>Store Section</h1>
   </div>
 </template>

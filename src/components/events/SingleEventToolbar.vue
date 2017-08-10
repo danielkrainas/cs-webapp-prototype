@@ -1,10 +1,12 @@
 <template>
   <div class="toolbar">
     <div class="toolbar-section left">
-      <div class="nav-back button">
-        <span class="fa fa-chevron-left"></span>
-        <span>All Events</span>
-      </div>
+      <router-link to="/events">
+        <div class="nav-back button">
+          <span class="fa fa-chevron-left"></span>
+          <span>All Events</span>
+        </div>
+      </router-link>
     </div>
     <div class="toolbar-section center">
       <h2 class="event-name">{{ eventName }}</h2>
@@ -27,7 +29,6 @@ export default {
   props: ['eventName'],
   data () {
     return {
-      // eventName: 'Event Name',
     }
   },
 }

@@ -24,7 +24,8 @@ html {
 
 a {
   &:link,
-  &:active {
+  &:active,
+  &:visited {
     text-decoration: none;
     color: inherit;
   }
@@ -49,12 +50,6 @@ input {
 }
 
 // Generic classes
-
-.icon-placeholder {
-  background-color: $color-accent;
-  height: 16px;
-  width: 16px;
-}
 
 .button {
   transition: background-color 0.2s;
@@ -101,4 +96,21 @@ $subnav-width: 240px;
   flex-direction: column;
   border-right: 1px solid $color-accent;
   width: $subnav-width;
+}
+
+// Placeholders and stubs
+
+.icon-placeholder {
+  background-color: $color-accent;
+  height: 16px;
+  width: 16px;
+}
+
+.stub {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  // color: #fff;
+  font-size: 50px;
 }

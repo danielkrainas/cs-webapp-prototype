@@ -23,13 +23,17 @@ const routes = [
       eventsContent: eventList,
     },
     children: [
+      // Events List
       {
         path: '',
         components: {
           default: events,
           eventsContent: eventList,
         },
-      }, {
+      },
+
+      // Single Event
+      {
         path: ':eventId',
         components: {
           default: events,
