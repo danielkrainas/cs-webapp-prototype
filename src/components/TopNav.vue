@@ -2,7 +2,7 @@
   <div class="top-nav">
     <ol class="nav-list">
       <li v-for="item in navItems" class="nav-item">
-        <router-link :to="{ name: item.route }">
+        <router-link :to="{ name: item.route }" class="button">
           {{ item.title }}
         </router-link>
       </li>
@@ -60,13 +60,10 @@ export default {
 
 .nav-item {
   min-width: 80px;
-  padding: 10px;
-  transition: background-color 0.3s ease;
   text-align: center;
-  border-radius: 5px;
+}
 
-  &:hover {
-    background-color: $color-button-hover-bg;
-  }
+.button {
+  text-align: center;
 }
 </style>

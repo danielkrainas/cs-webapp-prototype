@@ -1,21 +1,21 @@
 <template>
   <div class="single-event-container">
-    <single-event-toolbar :event-name="'Event ' + this.eventId"></single-event-toolbar>
+    <event-toolbar :event-name="'Event ' + this.eventId"></event-toolbar>
     <div class="content">
-      <single-event-subnav></single-event-subnav>
+      <event-subnav></event-subnav>
       <router-view name="eventDetails"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import singleEventToolbar from './SingleEventToolbar.vue'
-import singleEventSubnav from './SingleEventSubnav.vue'
+import eventToolbar from './EventToolbar.vue'
+import eventSubnav from './EventSubnav.vue'
 
 export default {
   components: {
-    singleEventToolbar,
-    singleEventSubnav,
+    eventToolbar,
+    eventSubnav,
   },
   props: ['eventId'],
 

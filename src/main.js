@@ -4,14 +4,20 @@ import App from './App.vue'
 import ToggleButton from 'vue-js-toggle-button'
 
 import account from './components/account/Account.vue'
+import accountAmbassador from './components/account/Ambassador.vue'
+import accountBilling from './components/account/Billing.vue'
+import accountEmail from './components/account/Email.vue'
+import accountStorage from './components/account/Storage.vue'
+import accountUser from './components/account/User.vue'
+import accountWeb from './components/account/Web.vue'
 
 import events from './components/events/Events.vue'
 import eventList from './components/events/EventList.vue'
-import singleEvent from './components/events/SingleEvent.vue'
-import folderImagesGrid from './components/events/FolderImagesGrid.vue'
+import eventSingle from './components/events/EventSingle.vue'
+import eventImages from './components/events/EventImages.vue'
 
 import galleryList from './components/galleries/GalleryList.vue'
-import singleGallery from './components/galleries/SingleGallery.vue'
+import gallerySingle from './components/galleries/GallerySingle.vue'
 
 import analyticsOverview from './components/analytics/Overview.vue'
 import analyticsFavorites from './components/analytics/Favorites.vue'
@@ -35,6 +41,34 @@ const routes = [{
   path: '/account',
   name: 'account',
   component: account,
+  children: [{
+    path: '',
+    redirect: { name: 'accountStorage' },
+  }, {
+    path: 'ambassador',
+    name: 'accountAmbassador',
+    components: { accountContent: accountAmbassador },
+  }, {
+    path: 'billing',
+    name: 'accountBilling',
+    components: { accountContent: accountBilling },
+  }, {
+    path: 'email',
+    name: 'accountEmail',
+    components: { accountContent: accountEmail },
+  }, {
+    path: 'storage',
+    name: 'accountStorage',
+    components: { accountContent: accountStorage },
+  }, {
+    path: 'user',
+    name: 'accountUser',
+    components: { accountContent: accountUser },
+  }, {
+    path: 'web',
+    name: 'accountWeb',
+    components: { accountContent: accountWeb },
+  }],
 }, {
   path: '/events',
   components: { default: events },
@@ -47,32 +81,36 @@ const routes = [{
       components: { eventsContent: eventList },
     }, {
       path: ':eventId',
-      components: { eventsContent: singleEvent },
+      components: { eventsContent: eventSingle },
       props: { eventsContent: true },
       children: [{
           path: '',
-          name: 'singleEvent',
-          redirect: 'images',
+          name: 'eventSingle',
+          redirect: { name: 'eventImages' },
         }, {
           path: 'images',
           name: 'eventImages',
-          components: { eventDetails: folderImagesGrid },
+          components: { eventDetails: eventImages },
           children: [{
             path: ':folderId',
             name: 'folderImages',
-            components: { eventDetails: folderImagesGrid },
+            components: { eventDetails: eventImages },
             props: { eventDetails: true },
           }],
-        }, {
+        },
+
+        {
           path: 'galleries',
           name: 'galleryList',
           components: { eventDetails: galleryList },
         }, {
           path: 'galleries/:galleryId',
-          name: 'singleGallery',
-          components: { eventDetails: singleGallery },
+          name: 'gallerySingle',
+          components: { eventDetails: gallerySingle },
           props: { eventDetails: true },
-        }, {
+        },
+
+        {
           path: 'overview',
           name: 'analyticsOverview',
           components: { eventDetails: analyticsOverview },
@@ -97,8 +135,11 @@ const routes = [{
 }, {
   path: '/store',
   name: 'store',
-  component: store,
+  components: { default: store },
   children: [{
+    path: '',
+    redirect: { name: 'storeOrders' },
+  }, {
     path: 'orders',
     name: 'storeOrders',
     components: { storeContent: storeOrders },
@@ -117,11 +158,11 @@ const routes = [{
   }, {
     path: 'taxes',
     name: 'storeTaxes',
-    components: { storeContent: storeBanking },
+    components: { storeContent: storeTaxes },
   }, {
     path: 'shipping',
     name: 'storeShipping',
-    components: { storeContent: storeBanking },
+    components: { storeContent: storeShipping },
   }],
 }]
 /* eslint-enable indent */

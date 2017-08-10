@@ -1,16 +1,16 @@
 <template>
-  <div class="account">
-    <account-toolbar></account-toolbar>
-    <router-view name="accountContent"></router-view>
+  <div class="store">
+    <store-toolbar></store-toolbar>
+    <router-view name="storeContent"></router-view>
   </div>
 </template>
 
 <script>
-import accountToolbar from './AccountToolbar.vue'
+import storeToolbar from './StoreToolbar.vue'
 
 export default {
   components: {
-    accountToolbar,
+    storeToolbar,
   },
   data () {
     return {}
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
-.account {
+.store {
   display: flex;
   flex-direction: column;
   flex-grow: 1;

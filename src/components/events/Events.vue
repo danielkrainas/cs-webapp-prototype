@@ -5,14 +5,7 @@
 </template>
 
 <script>
-// import eventList from './EventList.vue'
-// import singleEvent from './SingleEvent.vue'
-//
 export default {
-  // components: {
-  //   eventList,
-  //   singleEvent,
-  // },
   data () {
     return {
     }
