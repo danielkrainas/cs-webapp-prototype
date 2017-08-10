@@ -18,7 +18,14 @@ import analyticsFavorites from './components/analytics/Favorites.vue'
 import analyticsVisitors from './components/analytics/Visitors.vue'
 
 import people from './components/people/People.vue'
+
 import store from './components/store/Store.vue'
+import storeOrders from './components/store/Orders.vue'
+import storeCatalogs from './components/store/Catalogs.vue'
+import storeDiscounts from './components/store/Discounts.vue'
+import storeBanking from './components/store/Banking.vue'
+import storeTaxes from './components/store/Taxes.vue'
+import storeShipping from './components/store/Shipping.vue'
 
 Vue.use(ToggleButton)
 Vue.use(VueRouter)
@@ -40,11 +47,11 @@ const routes = [{
       components: { eventsContent: eventList },
     }, {
       path: ':eventId',
-      name: 'singleEvent',
       components: { eventsContent: singleEvent },
       props: { eventsContent: true },
       children: [{
           path: '',
+          name: 'singleEvent',
           redirect: 'images',
         }, {
           path: 'images',
@@ -91,6 +98,31 @@ const routes = [{
   path: '/store',
   name: 'store',
   component: store,
+  children: [{
+    path: 'orders',
+    name: 'storeOrders',
+    components: { storeContent: storeOrders },
+  }, {
+    path: 'catalogs',
+    name: 'storeCatalogs',
+    components: { storeContent: storeCatalogs },
+  }, {
+    path: 'discounts',
+    name: 'storeDiscounts',
+    components: { storeContent: storeDiscounts },
+  }, {
+    path: 'banking',
+    name: 'storeBanking',
+    components: { storeContent: storeBanking },
+  }, {
+    path: 'taxes',
+    name: 'storeTaxes',
+    components: { storeContent: storeBanking },
+  }, {
+    path: 'shipping',
+    name: 'storeShipping',
+    components: { storeContent: storeBanking },
+  }],
 }]
 /* eslint-enable indent */
 

@@ -1,11 +1,17 @@
 <template>
-  <div class="store stub">
-    <h1>Store Section</h1>
+  <div class="store">
+    <store-toolbar></store-toolbar>
+    <router-view name="storeContent"></router-view>
   </div>
 </template>
 
 <script>
+import storeToolbar from './StoreToolbar.vue'
+
 export default {
+  components: {
+    storeToolbar,
+  },
   data () {
     return {}
   },
@@ -14,5 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../style/colors';
+
+.store {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 </style>
