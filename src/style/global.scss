@@ -39,6 +39,15 @@ button {
   }
 }
 
+input {
+  border: 1px solid $color-accent;
+  background-color: $color-form-background;
+  color: $color-font-default;
+  border-radius: 5px;
+  height: 20px;
+  flex-basis: 250px;
+}
+
 // Generic classes
 
 .icon-placeholder {
