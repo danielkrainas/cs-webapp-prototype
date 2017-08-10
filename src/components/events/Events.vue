@@ -1,19 +1,18 @@
 <template>
   <div class="events">
-    <!-- <event-list></event-list> -->
-    <single-event></single-event>
+    <router-view name="eventsContent"></router-view>
   </div>
 </template>
 
 <script>
-import eventList from './EventList.vue'
-import singleEvent from './SingleEvent.vue'
-
+// import eventList from './EventList.vue'
+// import singleEvent from './SingleEvent.vue'
+//
 export default {
-  components: {
-    eventList,
-    singleEvent,
-  },
+  // components: {
+  //   eventList,
+  //   singleEvent,
+  // },
   data () {
     return {
     }

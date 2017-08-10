@@ -1,10 +1,10 @@
 <template>
   <div class="single-event-container">
-    <single-event-toolbar></single-event-toolbar>
+    <single-event-toolbar :event-name="'Event ' + this.eventId"></single-event-toolbar>
     <div class="content">
       <single-event-subnav></single-event-subnav>
-      <!-- <folder-images-grid></folder-images-grid> -->
-      <single-gallery></single-gallery>
+      <folder-images-grid></folder-images-grid>
+      <!-- <single-gallery></single-gallery> -->
     </div>
   </div>
 </template>
@@ -22,8 +22,15 @@ export default {
     folderImagesGrid,
     singleGallery,
   },
+  props: ['eventId'],
+
+  created () {
+    console.log('*************** id = ' + this.eventId)
+  },
+
   data () {
     return {
+      theId: this.eventId,
     }
   },
 }

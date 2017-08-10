@@ -5,6 +5,9 @@ import ToggleButton from 'vue-js-toggle-button'
 
 import account from './components/account/Account.vue'
 import events from './components/events/Events.vue'
+import eventList from './components/events/EventList.vue'
+import singleEvent from './components/events/SingleEvent.vue'
+
 import people from './components/people/People.vue'
 import store from './components/store/Store.vue'
 
@@ -13,7 +16,32 @@ Vue.use(VueRouter)
 
 const routes = [
   { path: '/account', component: account },
-  { path: '/events', component: events },
+  {
+    path: '/events',
+    components: {
+      default: events,
+      eventsContent: eventList,
+    },
+    children: [
+      {
+        path: '',
+        components: {
+          default: events,
+          eventsContent: eventList,
+        },
+      }, {
+        path: ':eventId',
+        components: {
+          default: events,
+          eventsContent: singleEvent,
+        },
+        props: {
+          default: false,
+          eventsContent: true,
+        },
+      },
+    ],
+  },
   { path: '/people', component: people },
   { path: '/store', component: store },
 ]

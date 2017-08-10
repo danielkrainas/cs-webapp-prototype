@@ -26,9 +26,11 @@
 
     <ol class="event-list">
       <li v-for="event in events" class="event">
-        <div class="event-image">
-          {{ event.name }}
-        </div>
+        <router-link :to="event.route">
+          <div class="event-image">
+            {{ event.name }}
+          </div>
+        </router-link>
       </li>
     </ol>
   </div>
@@ -42,8 +44,11 @@ export default {
     for (var i = 0; i < numEvents; i++) {
       events.push({
         name: `Event ${i}`,
+        id: `${i}`,
+        route: `/events/${i}`,
       })
     }
+
     return {
       events: events,
       sortOptions: [

@@ -24,9 +24,10 @@
 
 <script>
 export default {
+  props: ['eventName'],
   data () {
     return {
-      eventName: 'Event Name',
+      // eventName: 'Event Name',
     }
   },
 }
