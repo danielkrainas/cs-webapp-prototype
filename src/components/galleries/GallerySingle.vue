@@ -9,12 +9,10 @@
 
 <script>
 import galleryToolbar from './GalleryToolbar.vue'
-import gallerySubnav from './GallerySubnav.vue'
 
 export default {
   components: {
     galleryToolbar,
-    gallerySubnav,
   },
   props: ['galleryId'],
 
