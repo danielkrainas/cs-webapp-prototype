@@ -1,8 +1,8 @@
 <template>
   <ol class="nav-items">
     <li v-for="item in items" class="nav-item" :class="itemActiveClass(item)">
-      <router-link :to="{ name: item.routeName }">
-        {{ item.name }}
+      <router-link :to="{ name: item.routeName }" class="nav-link">
+        <span>{{ item.name }}</span>
       </router-link>
     </li>
   </ol>
@@ -52,6 +52,14 @@ export default {
 
   &:hover {
     background-color: $color-button-hover-bg;
+  }
+
+  .nav-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
