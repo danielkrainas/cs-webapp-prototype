@@ -176,6 +176,7 @@ const router = new VueRouter({
 /* TODO - these don't belong here... */
 require('./style/reset.css')
 require('./style/global.scss')
+require('./style/animation.scss')
 
 const app = new Vue({
   el: '#app',
