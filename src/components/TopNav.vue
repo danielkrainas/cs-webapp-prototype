@@ -19,8 +19,8 @@ export default {
     return {
       navItems: [
         {
-          title: 'Events',
-          route: 'eventList',
+          title: 'Galleries',
+          route: 'galleries',
         },
         {
           title: 'Store',
@@ -59,7 +59,6 @@ export default {
 }
 
 .nav-item {
-  min-width: 80px;
   text-align: center;
 }
 

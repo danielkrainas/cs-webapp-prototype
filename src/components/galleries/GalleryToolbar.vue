@@ -1,24 +1,22 @@
 <template>
   <div class="toolbar">
     <div class="toolbar-section left">
-      <router-link to="/events">
+      <router-link to="{ name: 'galleries' }">
         <div class="nav-back button">
           <span class="fa fa-chevron-left"></span>
-          <span>All Events</span>
+          <span>All Galleries</span>
         </div>
       </router-link>
     </div>
     <div class="toolbar-section center">
-      <h2 class="event-name">{{ eventName }}</h2>
+      <h2 class="gallery-name">{{ galleryName }}</h2>
     </div>
     <div class="toolbar-section right">
       <div class="button">
-        <span class="fa fa-share"></span>
-        <span class="button-title">Share</span>
+        <span class="button-title">Uplaod</span>
       </div>
       <div class="button">
-        <span class="fa fa-cog"></span>
-        <span class="button-title">Event Settings</span>
+        <span class="button-title">Share</span>
       </div>
     </div>
   </div>
@@ -26,7 +24,7 @@
 
 <script>
 export default {
-  props: ['eventName'],
+  props: ['galleryName'],
   data () {
     return {
     }
@@ -57,7 +55,7 @@ export default {
   }
 }
 
-.event-name {
+.gallery-name {
   font-size: 22px;
 }
 

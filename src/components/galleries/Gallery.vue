@@ -1,6 +1,6 @@
 <template>
-  <div class="events">
-    <router-view name="eventsContent"></router-view>
+  <div class="galleries">
+    <router-view name="galleryContent"></router-view>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
-.events {
+.galleries {
   flex-shrink: 1;
   flex-grow: 1;
   display: flex;

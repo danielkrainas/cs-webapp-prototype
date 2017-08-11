@@ -12,13 +12,12 @@ import accountStorage from './components/account/Storage.vue'
 import accountUser from './components/account/User.vue'
 import accountWeb from './components/account/Web.vue'
 
-import events from './components/events/Events.vue'
-import eventList from './components/events/EventList.vue'
-import eventSingle from './components/events/EventSingle.vue'
-import eventImages from './components/events/EventImages.vue'
-
+import gallery from './components/galleries/gallery.vue'
 import galleryList from './components/galleries/GalleryList.vue'
 import gallerySingle from './components/galleries/GallerySingle.vue'
+import galleryImages from './components/galleries/GalleryImages.vue'
+
+import gallerySettings from './components/galleries/GallerySettings.vue'
 
 import analyticsOverview from './components/analytics/Overview.vue'
 import analyticsFavorites from './components/analytics/Favorites.vue'
@@ -72,61 +71,53 @@ const routes = [{
     components: { accountContent: accountWeb },
   }],
 }, {
-  path: '/events',
-  components: { default: events },
+  path: '/galleries',
+  components: { default: gallery },
   children: [{
       path: '',
-      redirect: '/events/list',
+      name: 'galleries',
+      redirect: { name: 'galleryList' },
     }, {
       path: 'list',
-      name: 'eventList',
-      components: { eventsContent: eventList },
+      name: 'galleryList',
+      components: { galleryContent: galleryList },
     }, {
-      path: ':eventId',
-      components: { eventsContent: eventSingle },
-      props: { eventsContent: true },
+      path: ':galleryId',
+      components: { galleryContent: gallerySingle },
+      props: { galleryContent: true },
       children: [{
           path: '',
-          name: 'eventSingle',
-          redirect: { name: 'eventImages' },
+          name: 'gallerySingle',
+          redirect: { name: 'galleryImages' },
         }, {
           path: 'images',
-          name: 'eventImages',
-          components: { eventDetails: eventImages },
+          name: 'galleryImages',
+          components: { galleryDetails: galleryImages },
           children: [{
             path: ':folderId',
             name: 'folderImages',
-            components: { eventDetails: eventImages },
-            props: { eventDetails: true },
+            components: { galleryDetails: galleryImages },
+            props: { galleryDetails: true },
           }],
-        },
-
-        {
-          path: 'galleries',
-          name: 'galleryList',
-          components: { eventDetails: galleryList },
         }, {
-          path: 'galleries/:galleryId',
-          name: 'gallerySingle',
-          components: { eventDetails: gallerySingle },
-          props: { eventDetails: true },
-        },
-
-        {
           path: 'overview',
           name: 'analyticsOverview',
-          components: { eventDetails: analyticsOverview },
-          props: { eventDetails: true },
+          components: { galleryDetails: analyticsOverview },
+          props: { galleryDetails: true },
         }, {
           path: 'visitors',
           name: 'analyticsVisitors',
-          components: { eventDetails: analyticsVisitors },
-          props: { eventDetails: true },
+          components: { galleryDetails: analyticsVisitors },
+          props: { galleryDetails: true },
         }, {
           path: 'favorites',
           name: 'analyticsFavorites',
-          components: { eventDetails: analyticsFavorites },
-          props: { eventDetails: true },
+          components: { galleryDetails: analyticsFavorites },
+          props: { galleryDetails: true },
+        }, {
+          path: 'settings',
+          name: 'gallerySettings',
+          components: { galleryDetails: gallerySettings },
         },
     ],
   }],
@@ -178,7 +169,7 @@ require('./style/reset.css')
 require('./style/global.scss')
 require('./style/animation.scss')
 
-const app = new Vue({
+window.app = new Vue({
   el: '#app',
   router,
   render: h => h(App),

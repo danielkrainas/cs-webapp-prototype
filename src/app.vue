@@ -9,13 +9,11 @@
 
 <script>
 import topNav from './components/TopNav.vue'
-import events from './components/events/Events.vue'
 
 export default {
   name: 'app',
   components: {
     topNav,
-    events,
   },
   data () {
     return {

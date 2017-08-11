@@ -1,10 +1,6 @@
 <template>
   <div class="folder-images-grid">
     <div class="folder-images-toolbar">
-      <div class="upload-button button">
-        <span class="fa fa-upload"></span>
-        <span>Upload Images</span>
-      </div>
       <div class="folder-name">
         Folder Name
       </div>
