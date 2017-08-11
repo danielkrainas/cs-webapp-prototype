@@ -8,9 +8,11 @@
         </router-link>
       </li>
     </ol>
-    <div class="help nav-item button">
-      <span class="fa fa-question"></span>
-      Help
+    <div class="help nav-item">
+      <router-link :to="{ name: 'help' }" class="button">
+        <span class="fa fa-question"></span>
+        Help
+      </router-link>
     </div>
   </div>
 </template>

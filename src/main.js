@@ -35,6 +35,8 @@ import storeBanking from './components/store/Banking.vue'
 import storeTaxes from './components/store/Taxes.vue'
 import storeShipping from './components/store/Shipping.vue'
 
+import help from './components/Help.vue'
+
 Vue.use(VueRouter)
 Vue.use(ToggleButton)
 Vue.component('simple-input', SimpleInput)
@@ -171,6 +173,10 @@ const routes = [{
     name: 'storeShipping',
     components: { storeContent: storeShipping },
   }],
+}, {
+  path: '/help',
+  name: 'help',
+  component: help,
 }]
 /* eslint-enable indent */
 
