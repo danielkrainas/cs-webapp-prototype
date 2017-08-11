@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <top-nav></top-nav>
+    <main-nav></main-nav>
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import topNav from './components/TopNav.vue'
+import mainNav from './components/MainNav.vue'
 
 export default {
   name: 'app',
   components: {
-    topNav,
+    mainNav,
   },
   data () {
     return {
@@ -29,7 +29,7 @@ export default {
   width: 100vw;
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   overflow: hidden;
   background-color: $color-app-bg;
 }
