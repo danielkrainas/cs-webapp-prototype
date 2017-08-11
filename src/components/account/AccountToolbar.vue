@@ -1,38 +1,37 @@
 <template>
   <div class="toolbar">
-    <ol class="nav-list toolbar">
-      <li v-for="item in navItems">
-        <router-link :to="{ name: item.route }">
-          <span class="button">{{ item.name }}</span>
-        </router-link>
-      </li>
-    </ol>
+    <menu-bar :items="navItems"></menu-bar>
   </div>
 </template>
 
 <script>
+import menuBar from '../common/MenuBar.vue'
+
 export default {
+  components: {
+    menuBar,
+  },
   data () {
     return {
       navItems: [
         {
           name: 'Storage',
-          route: 'accountStorage',
+          routeName: 'accountStorage',
         }, {
           name: 'User',
-          route: 'accountUser',
+          routeName: 'accountUser',
         }, {
           name: 'Email',
-          route: 'accountEmail',
+          routeName: 'accountEmail',
         }, {
           name: 'Web',
-          route: 'accountWeb',
+          routeName: 'accountWeb',
         }, {
           name: 'Billing',
-          route: 'accountBilling',
+          routeName: 'accountBilling',
         }, {
           name: 'Ambassador',
-          route: 'accountAmbassador',
+          routeName: 'accountAmbassador',
         },
       ],
     }

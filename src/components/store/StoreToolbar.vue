@@ -1,38 +1,37 @@
 <template>
   <div class="store-subnav toolbar">
-    <ol class="nav-list">
-      <li v-for="item in navItems">
-        <router-link :to="{ name: item.route }">
-          <span class="button">{{ item.name }}</span>
-        </router-link>
-      </li>
-    </ol>
+    <menu-bar :items="navItems"></menu-bar>
   </div>
 </template>
 
 <script>
+import menuBar from '../common/MenuBar.vue'
+
 export default {
+  components: {
+    menuBar,
+  },
   data () {
     return {
       navItems: [
         {
           name: 'Orders',
-          route: 'storeOrders',
+          routeName: 'storeOrders',
         }, {
           name: 'Catalogs',
-          route: 'storeCatalogs',
+          routeName: 'storeCatalogs',
         }, {
           name: 'Discounts',
-          route: 'storeDiscounts',
+          routeName: 'storeDiscounts',
         }, {
           name: 'Shipping',
-          route: 'storeShipping',
+          routeName: 'storeShipping',
         }, {
           name: 'Taxes',
-          route: 'storeTaxes',
+          routeName: 'storeTaxes',
         }, {
           name: 'Banking',
-          route: 'storeBanking',
+          routeName: 'storeBanking',
         },
       ],
     }
