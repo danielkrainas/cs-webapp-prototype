@@ -2,7 +2,10 @@
   <div class="account-web container-settings">
     <div class="section-settings">
       <h2>Home Page URL</h2>
-      <simple-input placeholder="http://your-url.client-gallery.com"></simple-input>
+      <simple-input
+        placeholder="http://your-url.client-gallery.com"
+        icon="globe"
+        />
 
       <h2>Gallery Accent Color</h2>
       <div class="placeholder-block"></div>
@@ -11,7 +14,22 @@
       <div class="placeholder-block"></div>
 
       <h2>Social Media Links</h2>
-      <div class="placeholder-block"></div>
+      <simple-input
+        placeholder="facebook"
+        icon="facebook"
+        />
+      <simple-input
+        placeholder="twitter"
+        icon="twitter"
+        />
+      <simple-input
+        placeholder="instagram"
+        icon="instagram"
+        />
+      <simple-input
+        placeholder="blog"
+        icon="wordpress"
+        />
 
       <h2>Custom Logos</h2>
       <div class="placeholder-block"></div>
