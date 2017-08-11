@@ -1,23 +1,18 @@
 <template>
   <div class="toolbar">
     <div class="toolbar-section left">
-      <router-link to="{ name: 'galleries' }">
-        <div class="nav-back button">
-          <span class="fa fa-chevron-left"></span>
-          <span>All Galleries</span>
-        </div>
-      </router-link>
-    </div>
-    <div class="toolbar-section center">
       <h2 class="gallery-name">{{ galleryName }}</h2>
     </div>
+    <div class="toolbar-section center">
+    </div>
     <div class="toolbar-section right">
-      <div class="button">
-        <span class="button-title">Uplaod</span>
-      </div>
-      <div class="button">
-        <span class="button-title">Share</span>
-      </div>
+      <ol class="nav-items">
+        <li v-for="item in navItems">
+          <router-link :to="{ name: item.routeName }" class="button">
+            {{ item.name }}
+          </router-link>
+        </li>
+      </ol>
     </div>
   </div>
 </template>
@@ -27,6 +22,19 @@ export default {
   props: ['galleryName'],
   data () {
     return {
+      navItems: [{
+        name: 'Images',
+        routeName: 'galleryImages',
+      }, {
+        name: 'Visitors',
+        routeName: 'analyticsOverview',
+      }, {
+        name: 'Settings',
+        routeName: 'gallerySettings',
+      }, {
+        name: 'Share',
+        routeName: 'galleryShare',
+      }],
     }
   },
 }
@@ -43,6 +51,7 @@ export default {
 
   &.left {
     justify-content: flex-start;
+    margin-left: 5px;
   }
 
   &.center {
@@ -55,21 +64,12 @@ export default {
   }
 }
 
-.gallery-name {
-  font-size: 22px;
+.nav-items {
+  display: flex;
 }
 
-@media screen and (max-width: 800px) {
-  .button-title {
-    width: 0;
-    opacity: 0;
-  }
-
-  .right {
-    .fa {
-      margin-right: 0;
-    }
-  }
+.gallery-name {
+  font-size: 18px;
 }
 
 </style>

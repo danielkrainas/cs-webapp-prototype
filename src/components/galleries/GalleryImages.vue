@@ -1,18 +1,19 @@
 <template>
-  <div class="folder-images-grid">
-    <div class="folder-images-toolbar">
+  <div class="folder-images">
+    <div class="folder-images-toolbar toolbar">
       <div class="folder-name">
-        Folder Name
+        All Images
       </div>
-      <div class="folder-tools">
-        <ol class="filter-tags">
-          <li v-for="tag in tags" class="button">
-            <span class="fa fa-circle-o filter-item" v-bind:class="tag.class"></span>
-          </li>
-        </ol>
+      <div class="folder-actions">
+        <router-link :to="{ name: galleryUpload }" class="button">
+          Upload
+        </router-link>
+        <router-link :to="{ name: galleryDownload }" class="button">
+          Download
+        </router-link>
       </div>
     </div>
-    <ol class="images">
+    <ol class="images grid">
       <li v-for="image in images" class="image">
         <span>{{ image.name }}</span>
       </li>
@@ -54,12 +55,13 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
-.folder-images-toolbar {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+// .folder-images-toolbar {
+//   padding: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   border-bottom: 1px solid $color-accent;
+// }
 
 .filter-tags {
   display: flex;
@@ -74,13 +76,21 @@ export default {
 }
 
 .folder-name {
-  font-size: 22px;
+  font-size: 18px;
+  margin-left: 5px;
 }
 
-.folder-images-grid {
+.folder-actions {
+  display: flex;
+}
+
+.folder-images {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+}
+
+.grid {
   padding-top: 7px;
 }
 

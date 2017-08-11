@@ -16,8 +16,10 @@ import gallery from './components/galleries/gallery.vue'
 import galleryList from './components/galleries/GalleryList.vue'
 import gallerySingle from './components/galleries/GallerySingle.vue'
 import galleryImages from './components/galleries/GalleryImages.vue'
-
 import gallerySettings from './components/galleries/GallerySettings.vue'
+import galleryShare from './components/galleries/GalleryShare.vue'
+import galleryUpload from './components/galleries/GalleryUpload.vue'
+import galleryDownload from './components/galleries/galleryDownload.vue'
 
 import analyticsOverview from './components/analytics/Overview.vue'
 import analyticsFavorites from './components/analytics/Favorites.vue'
@@ -118,6 +120,18 @@ const routes = [{
           path: 'settings',
           name: 'gallerySettings',
           components: { galleryDetails: gallerySettings },
+        }, {
+          path: 'share',
+          name: 'galleryShare',
+          components: { galleryDetails: galleryShare },
+        }, {
+          path: 'upload',
+          name: 'galleryUpload',
+          components: { galleryDetails: galleryUpload },
+        }, {
+          path: 'download',
+          name: 'galleryDownload',
+          components: { galleryDetails: galleryDownload },
         },
     ],
   }],

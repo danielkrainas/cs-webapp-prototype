@@ -1,10 +1,8 @@
 <template>
   <div class="single-gallery-container">
     <gallery-toolbar :gallery-name="'Gallery ' + this.galleryId"></gallery-toolbar>
-    <div class="content">
-      <gallery-subnav></gallery-subnav>
-      <router-view name="galleryDetails"></router-view>
-    </div>
+    <!-- <gallery-subnav></gallery-subnav> -->
+    <router-view name="galleryDetails"></router-view>
   </div>
 </template>
 

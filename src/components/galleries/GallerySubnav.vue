@@ -1,26 +1,26 @@
 <template>
-  <div class="subnav">
+  <div class="toolbar">
     <router-link :to="{ name: 'galleryImages' }">
       <h2 class="subnav-header">Images</h2>
     </router-link>
-    <ol class="subnav-list">
+    <!-- <ol class="subnav-list">
       <li v-for="folder in folders" class="subnav-item">
         <router-link :to="{ name: 'folderImages', params: { folderId: folder.id }}">
           <span>{{ folder.name }}</span>
         </router-link>
       </li>
-    </ol>
+    </ol> -->
 
     <router-link :to="{ name: 'analyticsOverview' }">
       <h2 class="subnav-header">Info</h2>
     </router-link>
-    <ol class="subnav-list">
+    <!-- <ol class="subnav-list">
       <li v-for="section in analyticsSections" class="subnav-item">
         <router-link :to="{ name: section.route }">
           <span>{{ section.name }}</span>
         </router-link>
       </li>
-    </ol>
+    </ol> -->
 
     <router-link :to="{ name: 'analyticsOverview' }">
       <h2 class="subnav-header">Settings</h2>
@@ -32,24 +32,6 @@
 export default {
   data () {
     return {
-      folders: [
-        {
-          name: 'Folder A',
-          id: 'a',
-        },
-        {
-          name: 'Folder B',
-          id: 'b',
-        },
-        {
-          name: 'Folder C',
-          id: 'c',
-        },
-        {
-          name: 'Folder D',
-          id: 'd',
-        },
-      ],
       analyticsSections: [
         {
           name: 'Overview',
@@ -73,15 +55,17 @@ export default {
 @import '../../style/colors';
 
 .subnav {
+  // display: flex;
+  // flex-direction: row;
   padding-left: 25px;
-  width: 200px;
+  // width: 200px;
   flex-shrink: 0;
 }
 
-.subnav-header {
-  font-size: 22px;
-  margin-bottom: 5px;
-}
+// .subnav-header {
+//   font-size: 22px;
+//   margin-bottom: 5px;
+// }
 
 .subnav-list {
   margin-bottom: 20px;
