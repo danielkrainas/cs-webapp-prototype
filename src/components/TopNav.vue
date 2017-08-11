@@ -7,7 +7,7 @@
         </router-link>
       </li>
     </ol>
-    <div class="help nav-item">
+    <div class="help nav-item button">
       Help
     </div>
   </div>
