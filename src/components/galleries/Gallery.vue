@@ -1,6 +1,8 @@
 <template>
   <div class="galleries">
-    <router-view name="galleryContent"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view name="galleryContent"></router-view>
+    </transition>
   </div>
 </template>
 
