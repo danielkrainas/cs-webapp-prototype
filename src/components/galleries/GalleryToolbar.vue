@@ -6,19 +6,18 @@
     <div class="toolbar-section center">
     </div>
     <div class="toolbar-section right">
-      <ol class="nav-items">
-        <li v-for="item in navItems" class="nav-item" :class="itemExtraClass(item)">
-          <router-link :to="{ name: item.routeName }" class="button">
-            {{ item.name }}
-          </router-link>
-        </li>
-      </ol>
+      <menu-bar :items="navItems"></menu-bar>
     </div>
   </div>
 </template>
 
 <script>
+import menuBar from '../common/MenuBar.vue'
+
 export default {
+  components: {
+    menuBar,
+  },
   props: ['galleryId'],
   watch: {
     '$route': function () {
@@ -36,7 +35,6 @@ export default {
   },
   data () {
     return {
-      lastRouteName: this.$route.name,
       navItems: [{
         name: 'Images',
         routeName: 'galleryImages',
