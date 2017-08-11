@@ -129,10 +129,21 @@ $subnav-width: 240px;
 
 .stub {
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  text-align: center;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  p {
+    margin-top: 30px;
+    line-height: 22px;
+    font-size: 15px;
+  }
 }
 
 .placeholder-block {
