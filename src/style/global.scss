@@ -74,6 +74,11 @@ input {
   }
 }
 
+// Don't bounce on scroll
+html, body {
+  overflow: hidden;
+}
+
 $layout-toolbar-height: 50px;
 
 .toolbar {
