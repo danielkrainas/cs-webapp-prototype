@@ -30,6 +30,7 @@
 
 <script>
 export default {
+  props: ['galleryId'],
   data () {
     return {
       analyticsSections: [

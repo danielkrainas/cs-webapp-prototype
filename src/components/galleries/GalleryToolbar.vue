@@ -1,7 +1,7 @@
 <template>
   <div class="toolbar">
     <div class="toolbar-section left">
-      <h2 class="gallery-name">{{ galleryName }}</h2>
+      <h2 class="gallery-name">Gallery {{ galleryId }}</h2>
     </div>
     <div class="toolbar-section center">
     </div>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ['galleryName'],
+  props: ['galleryId'],
   data () {
     return {
       navItems: [{

@@ -17,10 +17,6 @@ export default {
   },
   props: ['galleryId'],
 
-  created () {
-    console.log('*************** id = ' + this.galleryId)
-  },
-
   data () {
     return {
       theId: this.galleryId,
