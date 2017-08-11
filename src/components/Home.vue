@@ -24,6 +24,12 @@
         <li>(long-term) a simplified backend API and storage architecture</li>
       </ol>
 
+      <h3>No Folders</h3>
+      <p>The primary purpose of folders is to organize images for presentation in galleries. Secondarily, it's to segment images for multiple galleries in an event, but I'd like to ditch that (see above). To accomplish the same end, with greater flexibility, I'd like to use ad-hoc "collections" on the set of gallery images. Filters, basically, which can display a subset of the gallery images in the app or in the galleries themselves.</p>
+      <p>In the app, photograpers can tag images (we'll have to overhaul our tag system too - WIP). When setting up a gallery, they can include or exclude tags if needs be, or order presentation based on tags.</p>
+      <p>So, galleries contain a flat collection of images, and we can tag images to create collections. We can also create collections from user favorites, purchased images, etc. It will look the same to the gallery visitors, but photographers will have a lot more flexibility.</p>
+      <p>I'm still thinking this through. Subject to change. WIP.</p>
+
     </div>
   </div>
 </template>
