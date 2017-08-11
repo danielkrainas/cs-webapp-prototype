@@ -1,5 +1,5 @@
 <template>
-  <div class="toolbar">
+  <div class="gallery-toolbar toolbar">
     <div class="toolbar-section left">
       <h2 class="gallery-name">Gallery {{ galleryId }}</h2>
     </div>
@@ -55,6 +55,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../style/colors';
+
+.gallery-toolbar {
+  padding-left: 10px;
+}
 
 .toolbar-section {
   display: flex;

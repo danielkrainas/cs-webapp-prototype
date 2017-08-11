@@ -1,7 +1,7 @@
 <template>
   <ol class="nav-items">
     <li v-for="item in items" class="nav-item" :class="itemActiveClass(item)">
-      <router-link :to="{ name: item.routeName }" class="button">
+      <router-link :to="{ name: item.routeName }">
         {{ item.name }}
       </router-link>
     </li>
@@ -46,6 +46,13 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  padding: 0 15px;
+
+  &:hover {
+    background-color: $color-button-hover-bg;
+  }
 }
 
 .callout {
