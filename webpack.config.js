@@ -10,7 +10,7 @@ module.exports = {
     filename: 'app.js',
   },
   plugins: [new HtmlWebpackPlugin({
-    name: 'CloudSpot',
+    title: 'CloudSpot',
     template: 'index.ejs',
   })],
   module: {
