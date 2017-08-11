@@ -6,6 +6,8 @@ Working out the responsiveness and UX kinks that migrating to a native web app w
 
 then
 
-`npm run dev`
+`npm run build`
 
-(and possibly `npm run build` at some point in there too. I dunno. I just work here...)
+then start the server via
+
+`npm run dev`

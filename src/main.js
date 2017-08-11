@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ToggleButton from 'vue-js-toggle-button'
-import SimpleInput from './components/common/simple-input.vue'
+import SimpleInput from './components/common/SimpleInput.vue'
 
 import App from './App.vue'
 
