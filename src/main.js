@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import ToggleButton from 'vue-js-toggle-button'
+import SimpleInput from './components/common/simple-input.vue'
 
 import account from './components/account/Account.vue'
 import accountAmbassador from './components/account/Ambassador.vue'
@@ -33,8 +34,9 @@ import storeBanking from './components/store/Banking.vue'
 import storeTaxes from './components/store/Taxes.vue'
 import storeShipping from './components/store/Shipping.vue'
 
-Vue.use(ToggleButton)
 Vue.use(VueRouter)
+Vue.use(ToggleButton)
+Vue.component('simple-input', SimpleInput)
 
 /* eslint-disable indent */
 const routes = [{
