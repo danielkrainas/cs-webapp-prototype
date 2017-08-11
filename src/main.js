@@ -22,6 +22,7 @@ import galleryImages from './components/galleries/GalleryImages.vue'
 import galleryImagesGrid from './components/galleries/GalleryImagesGrid.vue'
 import gallerySettings from './components/galleries/GallerySettings.vue'
 import galleryShare from './components/galleries/GalleryShare.vue'
+import galleryCreate from './components/galleries/GalleryCreate.vue'
 import galleryUpload from './components/galleries/GalleryUpload.vue'
 import galleryDownload from './components/galleries/GalleryDownload.vue'
 
@@ -93,6 +94,10 @@ const routes = [{
       path: 'list',
       name: 'galleryList',
       components: { galleryContent: galleryList },
+    }, {
+      path: 'create',
+      name: 'galleryCreate',
+      components: { galleryContent: galleryCreate },
     }, {
       path: ':galleryId',
       components: { galleryContent: gallerySingle },

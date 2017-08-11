@@ -2,10 +2,12 @@
   <div class="gallery-list-container">
     <div class="toolbar">
       <div class="toolbar-left">
-        <div class="add-gallery">
-          <span class="fa fa-plus-square button"></span>
-          <span>New Gallery</span>
-        </div>
+        <router-link :to="{ name: 'galleryCreate' }">
+          <div class="add-gallery">
+            <span class="fa fa-plus-square button"></span>
+            <span>New Gallery</span>
+          </div>
+        </router-link>
         <div class="search">
           <span class="fa fa-search search-icon"></span>
           <input class="search-box" placeholder="Search Galleries">
