@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './App.vue'
 import ToggleButton from 'vue-js-toggle-button'
 import SimpleInput from './components/common/simple-input.vue'
+
+import App from './App.vue'
+
+import home from './components/Home.vue'
 
 import account from './components/account/Account.vue'
 import accountAmbassador from './components/account/Ambassador.vue'
@@ -44,6 +47,10 @@ Vue.component('simple-input', SimpleInput)
 
 /* eslint-disable indent */
 const routes = [{
+  path: '/',
+  name: 'home',
+  component: home,
+}, {
   path: '/account',
   name: 'account',
   component: account,
