@@ -1,6 +1,6 @@
 <template>
   <div class="people stub">
-    <h1>People Section</h1>
+    <h1>People</h1>
   </div>
 </template>
 
