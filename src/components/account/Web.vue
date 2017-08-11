@@ -11,7 +11,14 @@
       <div class="placeholder-block"></div>
 
       <h2>Website & Copyright</h2>
-      <div class="placeholder-block"></div>
+      <simple-input
+        placeholder="http://your-website.com"
+        icon="globe"
+        />
+      <simple-input
+        placeholder="Your Copyright Info"
+        icon="copyright"
+        />
 
       <h2>Social Media Links</h2>
       <simple-input
@@ -32,10 +39,27 @@
         />
 
       <h2>Custom Logos</h2>
-      <div class="placeholder-block"></div>
+      <h3>Email Logo</h3>
+      <div class="placeholder-block md"></div>
+
+      <h3>Online Gallery Logo</h3>
+      <div class="placeholder-block md"></div>
+
+      <h3>Cover Photo Logo</h3>
+      <div class="placeholder-block md"></div>
 
       <h2>Web Gallery Watermark</h2>
-      <div class="placeholder-block"></div>
+
+      <h3>Watermark File</h3>
+      <div class="placeholder-block md"></div>
+
+      <h3>Watermark Location</h3>
+      <div class="placeholder-block md"></div>
+
+      <h3>Watermark Opacity</h3>
+      <div class="placeholder-block md"></div>
+
+
     </div>
   </div>
 </template>
