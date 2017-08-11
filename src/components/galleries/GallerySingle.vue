@@ -1,6 +1,6 @@
 <template>
   <div class="single-gallery-container">
-    <gallery-toolbar :gallery-name="'Gallery ' + this.galleryId"></gallery-toolbar>
+    <gallery-toolbar></gallery-toolbar>
     <transition name="fade" mode="out-in">
       <router-view name="galleryDetails"></router-view>
     </transition>

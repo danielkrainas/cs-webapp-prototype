@@ -1,7 +1,7 @@
 <template>
   <div class="gallery-toolbar toolbar">
     <div class="toolbar-section left">
-      <h2 class="gallery-name">Gallery {{ galleryId }}</h2>
+      <h2 class="gallery-name">Gallery Name</h2>
     </div>
     <div class="toolbar-section center">
     </div>
