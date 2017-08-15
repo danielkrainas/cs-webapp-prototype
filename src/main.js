@@ -4,7 +4,6 @@ import ToggleButton from 'vue-js-toggle-button'
 import SimpleInput from './components/common/SimpleInput.vue'
 
 import App from './App.vue'
-
 import home from './components/Home.vue'
 
 import account from './components/account/Account.vue'
@@ -41,6 +40,8 @@ import storeTaxes from './components/store/Taxes.vue'
 import storeShipping from './components/store/Shipping.vue'
 
 import help from './components/Help.vue'
+
+import DataStore from './vuex'
 
 Vue.use(VueRouter)
 Vue.use(ToggleButton)
@@ -212,6 +213,7 @@ require('./style/global.scss')
 require('./style/animation.scss')
 
 window.app = new Vue({
+  store: DataStore,
   el: '#app',
   router,
   render: h => h(App),

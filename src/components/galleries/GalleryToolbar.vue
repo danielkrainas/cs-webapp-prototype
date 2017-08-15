@@ -1,7 +1,7 @@
 <template>
   <div class="gallery-toolbar toolbar">
     <div class="toolbar-section left">
-      <h2 class="gallery-name">Gallery Name</h2>
+      <h2 class="gallery-name">{{ currentGallery.name }}</h2>
     </div>
     <div class="toolbar-section right">
       <menu-bar :items="navItems"></menu-bar>
@@ -24,6 +24,11 @@ export default {
           this.lastRouteName = this.$route.name
         }
       }
+    },
+  },
+  computed: {
+    currentGallery () {
+      return this.$store.state.currentGallery
     },
   },
   methods: {

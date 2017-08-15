@@ -27,7 +27,9 @@
     </div>
 
     <ol class="gallery-list">
-      <li v-for="gallery in galleries" class="gallery">
+      <li v-for="gallery in galleries"
+          class="gallery"
+          v-on:click="gallerySelected(gallery)">
         <router-link :to="{ name: 'gallerySingle', params: { galleryId: gallery.id }}">
           <div class="gallery-image">
             {{ gallery.name }}
@@ -67,6 +69,12 @@ export default {
         },
       ],
     }
+  },
+
+  methods: {
+    gallerySelected (gallery) {
+      this.$store.commit('setCurrentGallery', gallery)
+    },
   },
 }
 </script>
