@@ -1,7 +1,7 @@
 <template>
   <div class="gallery-toolbar toolbar">
     <div class="toolbar-section left">
-      <h2 class="gallery-name">{{ currentGallery.name }}</h2>
+      <h2 class="gallery-name">{{ galleryName }}</h2>
     </div>
     <div class="toolbar-section right">
       <menu-bar :items="navItems"></menu-bar>
@@ -16,7 +16,6 @@ export default {
   components: {
     menuBar,
   },
-  props: ['galleryId'],
   watch: {
     '$route': function () {
       for (var i in this.navItems) {
@@ -27,8 +26,12 @@ export default {
     },
   },
   computed: {
-    currentGallery () {
-      return this.$store.state.currentGallery
+    galleryId () {
+      return this.$route.params.galleryId
+    },
+    galleryName () {
+      const g = this.$store.getters.galleryById(this.galleryId)
+      return g.name
     },
   },
   methods: {

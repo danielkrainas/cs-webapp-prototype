@@ -27,9 +27,7 @@
     </div>
 
     <ol class="gallery-list">
-      <li v-for="gallery in galleries"
-          class="gallery"
-          v-on:click="gallerySelected(gallery)">
+      <li v-for="gallery in galleries" class="gallery">
         <router-link :to="{ name: 'gallerySingle', params: { galleryId: gallery.id }}">
           <div class="gallery-image">
             {{ gallery.name }}
@@ -43,17 +41,7 @@
 <script>
 export default {
   data () {
-    var galleries = []
-    const numGalleries = 20
-    for (var i = 0; i < numGalleries; i++) {
-      galleries.push({
-        name: `Gallery ${i}`,
-        id: `${i}`,
-      })
-    }
-
     return {
-      galleries,
       sortOptions: [
         {
           key: 'name',
@@ -71,9 +59,12 @@ export default {
     }
   },
 
-  methods: {
-    gallerySelected (gallery) {
-      this.$store.commit('setCurrentGallery', gallery)
+  computed: {
+    galleries () {
+      if (this.$store.state.galleries.length === 0) {
+        this.$store.commit('initGalleries')
+      }
+      return this.$store.state.galleries
     },
   },
 }
