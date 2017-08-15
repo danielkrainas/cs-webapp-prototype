@@ -30,8 +30,7 @@ export default {
       return this.$route.params.galleryId
     },
     galleryName () {
-      const g = this.$store.getters.galleryById(this.galleryId)
-      return g.name
+      return this.$store.getters.galleryById(this.galleryId).name
     },
   },
   methods: {
