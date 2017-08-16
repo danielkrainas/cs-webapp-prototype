@@ -1,6 +1,6 @@
 <template>
-  <div class="account-user container-settings">
-    <div class="settings__section">
+  <div class="account-user settings__container">
+    <section>
       <h2>Avatar</h2>
       <div class="placeholder-block"></div>
 
@@ -29,7 +29,7 @@
         placeholder="you@your-email.com"
         icon="envelope-o"
         />
-    </div>
+    </section>
   </div>
 </template>
 

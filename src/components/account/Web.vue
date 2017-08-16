@@ -1,6 +1,6 @@
 <template>
-  <div class="account-web container-settings">
-    <div class="settings__section">
+  <div class="account-web settings__container">
+    <section>
       <h2>Home Page URL</h2>
       <simple-input
         placeholder="http://your-url.client-gallery.com"
@@ -60,7 +60,7 @@
       <div class="placeholder-block md"></div>
 
 
-    </div>
+    </section>
   </div>
 </template>
 
