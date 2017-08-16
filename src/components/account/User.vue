@@ -1,6 +1,6 @@
 <template>
   <div class="account-user container-settings">
-    <div class="section-settings">
+    <div class="settings__section">
       <h2>Avatar</h2>
       <div class="placeholder-block"></div>
 

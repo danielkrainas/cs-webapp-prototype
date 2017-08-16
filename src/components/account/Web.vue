@@ -1,6 +1,6 @@
 <template>
   <div class="account-web container-settings">
-    <div class="section-settings">
+    <div class="settings__section">
       <h2>Home Page URL</h2>
       <simple-input
         placeholder="http://your-url.client-gallery.com"

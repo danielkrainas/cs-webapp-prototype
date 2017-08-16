@@ -8,9 +8,8 @@ import home from './components/Home.vue'
 
 import account from './components/account/Account.vue'
 import accountAmbassador from './components/account/Ambassador.vue'
-import accountBilling from './components/account/Billing.vue'
 import accountEmail from './components/account/Email.vue'
-import accountStorage from './components/account/Storage.vue'
+import accountPlan from './components/account/Plan.vue'
 import accountUser from './components/account/User.vue'
 import accountWeb from './components/account/Web.vue'
 
@@ -64,17 +63,13 @@ const routes = [{
     name: 'accountAmbassador',
     components: { accountContent: accountAmbassador },
   }, {
-    path: 'billing',
-    name: 'accountBilling',
-    components: { accountContent: accountBilling },
-  }, {
     path: 'email',
     name: 'accountEmail',
     components: { accountContent: accountEmail },
   }, {
-    path: 'storage',
-    name: 'accountStorage',
-    components: { accountContent: accountStorage },
+    path: 'plan',
+    name: 'accountPlan',
+    components: { accountContent: accountPlan },
   }, {
     path: 'user',
     name: 'accountUser',

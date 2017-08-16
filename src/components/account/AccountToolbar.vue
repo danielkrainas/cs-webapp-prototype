@@ -15,8 +15,8 @@ export default {
     return {
       navItems: [
         {
-          name: 'Storage',
-          routeName: 'accountStorage',
+          name: 'Plan',
+          routeName: 'accountPlan',
         }, {
           name: 'User',
           routeName: 'accountUser',
@@ -26,9 +26,6 @@ export default {
         }, {
           name: 'Web',
           routeName: 'accountWeb',
-        }, {
-          name: 'Billing',
-          routeName: 'accountBilling',
         }, {
           name: 'Ambassador',
           routeName: 'accountAmbassador',
