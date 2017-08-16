@@ -8,11 +8,7 @@
             <span>New Gallery</span>
           </div>
         </router-link>
-        <div class="search">
-          <span class="fa fa-search search-icon"></span>
-          <input class="search-box" placeholder="Search Galleries">
-          </input>
-        </div>
+        <simple-search placeholder="Search Galleries"></simple-search>
       </div>
       <div class="toolbar-right">
         <span>Sort By</span>
@@ -39,7 +35,12 @@
 </template>
 
 <script>
+import simpleSearch from '../common/SimpleSearch.vue'
+
 export default {
+  components: {
+    simpleSearch,
+  },
   data () {
     return {
       sortOptions: [
@@ -124,28 +125,6 @@ export default {
       background-color: inherit;
     }
   }
-}
-
-.search {
-  position: relative;
-}
-
-.search-box {
-  height: 30px;
-  border-radius: 15px;
-  border: 1px solid $color-accent;
-  width: 300px;
-  padding: 0 10px;
-  text-indent: 25px;
-  position: relative;
-}
-
-.search-icon {
-  position: absolute;
-  top: 8px;
-  left: 11px;
-  z-index: 10;
-  color: $color-accent;
 }
 
 .toolbar-left,

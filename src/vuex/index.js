@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// import _ from 'lodash'
+import mockOrders from './mock-data/orders'
 
 Vue.use(Vuex)
 
@@ -19,12 +19,17 @@ function generateTestGalleries (count = 20) {
 const store = new Vuex.Store({
   state: {
     galleries: [],
+    orders: mockOrders.result,
   },
   getters: {
     /* Fetch one gallery by ID */
     galleryById: (s, g) => (id) => {
       const matches = s.galleries.filter(g => g.id === id)
-      return matches.length === 0 ? {} : matches[0]
+      return matches.length === 0 ? null : matches[0]
+    },
+    orderById: (s, g) => (id) => {
+      const matches = s.orders.filter(g => g.id === id)
+      return matches.length === 0 ? null : matches[0]
     },
   },
   mutations: {

@@ -93,6 +93,12 @@ $layout-toolbar-height: 50px;
   flex-shrink: 0;
 }
 
+.toolbar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // base styles for single-column pages of settings-type stuff
 .settings__container {
   display: flex;
