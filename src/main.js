@@ -41,8 +41,10 @@ import storeShipping from './components/store/Shipping.vue'
 import help from './components/Help.vue'
 
 import DataStore from './vuex'
+import { ClientTable } from 'vue-tables-2'
 
 Vue.use(VueRouter)
+Vue.use(ClientTable)
 Vue.use(ToggleButton)
 Vue.component('simple-input', SimpleInput)
 

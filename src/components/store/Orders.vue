@@ -7,7 +7,11 @@
     </div>
 
     <div class="orders-list-content">
-      <table class="order-table">
+      <v-client-table
+        :data="tableData"
+        :columns="tableColumns"
+        :options="tableOptions"></v-client-table>
+      <!-- <table class="order-table">
         <tr class="order-header-row">
           <th class="col-num">Order #</th>
           <th class="col-date">Date</th>
@@ -24,7 +28,7 @@
           <td class="col-status">{{ order.status }}</td>
           <td class="col-total">{{ order.total }}</td>
         </tr>
-      </table>
+      </table> -->
     </div>
   </div>
 </template>
@@ -32,19 +36,42 @@
 <script>
 import simpleSearch from '../common/SimpleSearch.vue'
 import moment from 'moment'
-import { mapState } from 'vuex'
 
 export default {
-  components: { simpleSearch },
+  components: {
+    simpleSearch,
+  },
   data () {
-    return {}
+    return {
+      tableOptions: {
+        dateColumns: ['date'],
+      },
+    }
   },
   methods: {
     formatDate (isoDateString) {
-      return moment(isoDateString).format('l')
+      return moment(isoDateString)
+      // return moment(isoDateString).format('l')
     },
   },
-  computed: mapState([ 'orders' ]),
+  // computed: mapState([ 'orders' ]),
+  computed: {
+    tableData () {
+      return this.$store.state.orders.map((order) => {
+        return {
+          id: order._id,
+          date: moment(order.createdDate).format('l'),
+          customer: order.address.fullName,
+          gallery: order.onlineGalleryName,
+          status: order.status,
+          total: order.total,
+        }
+      })
+    },
+    tableColumns () {
+      return ['id', 'date', 'customer', 'gallery', 'status', 'total']
+    },
+  },
 }
 </script>
 
