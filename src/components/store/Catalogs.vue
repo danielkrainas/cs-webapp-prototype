@@ -1,12 +1,24 @@
 <template>
   <div class="store-catalogs">
     <div class="catalogs-toolbar toolbar">
+      <div class="catalog-tools">
+        <router-link :to="{ name: 'storeCatalogCreate'}" class="button">
+          <span class="fa fa-plus-square"></span>
+          <span>New Catalog</span>
+        </router-link>
+      </div>
       <div class="catalog-select-container">
         <select class="catalog-select" v-model="currentCatalogIndex">
           <option v-for="(catalog, i) in catalogs" :value="i">
             {{ catalog.displayName }}
           </option>
         </select>
+      </div>
+      <div class="catalog-tools">
+        <router-link :to="{ name: '' }" class="button">
+          <span class="fa fa-trash"></span>
+          <span>Delete Catalog</span>
+        </router-link>
       </div>
     </div>
     <div class="catalog-list-content">
@@ -79,8 +91,13 @@ export default {
   padding: 0 15px;
 }
 
-.catalog-select {
+.catalog-tools {
+  display: flex;
+  align-items: stretch;
 
+  .button {
+    border-radius: 0;
+  }
 }
 
 </style>
