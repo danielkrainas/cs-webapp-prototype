@@ -1,7 +1,9 @@
 <template>
   <div class="account">
     <account-toolbar></account-toolbar>
-    <router-view name="accountContent"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view name="accountContent"></router-view>
+    </transition>
   </div>
 </template>
 
