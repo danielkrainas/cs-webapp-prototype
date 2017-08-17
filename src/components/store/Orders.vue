@@ -30,6 +30,7 @@ export default {
     return {
       tableColumns: ['orderNumber', 'date', 'customer', 'gallery', 'status', 'total'],
       tableOptions: {
+        perPage: 100,
         dateColumns: ['date'],
         headings: {
           orderNumber: 'Order #',
@@ -91,12 +92,4 @@ export default {
   padding: 20px;
 }
 
-.order-header-row,
-.order-row {
-  display: flex;
-  border-bottom: 1px solid $color-accent;
-  height: 30px;
-  align-items: center;
-  justify-content: space-between;
-}
 </style>

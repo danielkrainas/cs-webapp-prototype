@@ -49,6 +49,14 @@ input {
   flex-basis: 250px;
 }
 
+select {
+  height: 28px;
+  background-color: $color-form-background;
+  color: $color-font-default;
+  border-color: $color-accent;
+}
+
+
 // Generic classes
 
 .button {

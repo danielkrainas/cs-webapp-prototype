@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import mockOrders from './mock-data/orders'
+import mockCatalogs from './mock-data/pricesheets'
 
 Vue.use(Vuex)
 
@@ -20,6 +21,7 @@ const store = new Vuex.Store({
   state: {
     galleries: [],
     orders: mockOrders.result,
+    catalogs: mockCatalogs.result,
   },
   getters: {
     /* Fetch one gallery by ID */
