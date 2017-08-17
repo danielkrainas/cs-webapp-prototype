@@ -57,7 +57,19 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
+@mixin flex-content($direction) {
+  display: flex;
+  flex-direction: $direction;
+  flex: 1 1;
+}
+
+.store-catalogs {
+  @include flex-content(column);
+}
+
 .catalog-list-content {
+  @include flex-content(column);
+  overflow-y: scroll;
   padding: 20px;
 }
 
