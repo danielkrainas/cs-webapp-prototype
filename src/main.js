@@ -59,7 +59,7 @@ const routes = [{
   component: account,
   children: [{
     path: '',
-    redirect: { name: 'accountStorage' },
+    redirect: { name: 'accountPlan' },
   }, {
     path: 'ambassador',
     name: 'accountAmbassador',
