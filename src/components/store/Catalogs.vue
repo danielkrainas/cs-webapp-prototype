@@ -23,11 +23,11 @@
 export default {
   data () {
     return {
-      tableColumns: ['name', 'cost', 'markup', 'price', 'delete'],
+      tableColumns: ['product', 'cost', 'markup', 'price', 'delete'],
       tableOptions: {
         perPage: 100,
         columnsClasses: {
-          name: 'col-name',
+          product: 'col-name',
           cost: 'col-cost',
           markup: 'col-markup',
           price: 'col-price',
@@ -42,10 +42,10 @@ export default {
     tableData () {
       return this.catalogs[this.currentCatalogIndex].products.map((product) => {
         return {
-          name: product.name,
-          cost: product.whcc_cost || 0,
-          markup: product.cost - product.whcc_cost || 'N/A',
-          price: product.cost || product.totalCost,
+          product: product.name,
+          cost: product.whcc_cost.toFixed(2) || 0,
+          markup: (product.cost - product.whcc_cost).toFixed(2) || 'N/A',
+          price: (product.cost || product.totalCost).toFixed(2),
           delete: 'X',
         }
       })
