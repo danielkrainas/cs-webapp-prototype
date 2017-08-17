@@ -11,24 +11,13 @@
         :data="tableData"
         :columns="tableColumns"
         :options="tableOptions"></v-client-table>
-      <!-- <table class="order-table">
-        <tr class="order-header-row">
-          <th class="col-num">Order #</th>
-          <th class="col-date">Date</th>
-          <th class="col-customer">Customer</th>
-          <th class="col-gallery">Gallery</th>
-          <th class="col-status">Status</th>
-          <th class="col-total">Total</th>
-        </tr>
-        <tr v-for="order in orders" class="order-row">
-          <td class="col-num">{{ order.orderNumber }}</td>
-          <td class="col-date">{{ formatDate(order.createdDate) }}</td>
-          <td class="col-customer">{{ order.address[0].fullName }}</td>
-          <td class="col-gallery">{{ order.onlineGalleryName }}</td>
-          <td class="col-status">{{ order.status }}</td>
-          <td class="col-total">{{ order.total }}</td>
-        </tr>
-      </table> -->
+    </div>
+    <div class="note">
+      <p>We can hook up the search box in the toolbar to the table's filter via
+         the table's setFilter(query) method. Then we should just hide the
+         provided search box I think.</p>
+      <p>The table can and should be refactored into a component wrapper that we
+         can reuse throughout.</p>
     </div>
   </div>
 </template>
@@ -45,23 +34,32 @@ export default {
     return {
       tableOptions: {
         dateColumns: ['date'],
+        headings: {
+          orderNumber: 'Order #',
+        },
+        columnsClasses: {
+          orderNumber: 'col-num',
+          date: 'col-date',
+          customer: 'col-customer',
+          gallery: 'col-gallery',
+          status: 'col-status',
+          total: 'col-total',
+        },
       },
     }
   },
   methods: {
     formatDate (isoDateString) {
       return moment(isoDateString)
-      // return moment(isoDateString).format('l')
     },
   },
-  // computed: mapState([ 'orders' ]),
   computed: {
     tableData () {
       return this.$store.state.orders.map((order) => {
         return {
-          id: order._id,
+          orderNumber: order.orderNumber,
           date: moment(order.createdDate).format('l'),
-          customer: order.address.fullName,
+          customer: order.address[0].fullName,
           gallery: order.onlineGalleryName,
           status: order.status,
           total: order.total,
@@ -69,14 +67,62 @@ export default {
       })
     },
     tableColumns () {
-      return ['id', 'date', 'customer', 'gallery', 'status', 'total']
+      return ['orderNumber', 'date', 'customer', 'gallery', 'status', 'total']
     },
   },
 }
 </script>
 
+<style lang="scss">
+@import 'src/style/colors';
+
+// sass-lint:disable-block class-name-format
+.VueTables--client {
+  display: flex;
+  flex-direction: column;
+
+  .table-responsive {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .VueTables__table {
+    width: 100%;
+    margin: 15px 0;
+
+    tr {
+      height: 30px;
+    }
+
+    th {
+      text-align: left;
+
+      .col-total {
+        text-align: right;
+      }
+    }
+
+    td {
+      padding: 8px 0;
+    }
+
+    thead {
+      border-bottom: 1px solid $color-accent;
+    }
+  }
+}
+
+.orders-list-content {
+  .col-total {
+    text-align: right;
+  }
+}
+
+
+</style>
+
 <style lang="scss" scoped>
-@import '../../style/colors';
+@import 'src/style/colors';
 
 .orders-list-toolbar {
   padding-left: 15px;
@@ -84,14 +130,6 @@ export default {
 
 .orders-list-content {
   padding: 20px;
-}
-
-.order-table {
-  width: 100%;
-}
-
-td {
-  border: 1px solid #fff;
 }
 
 .order-header-row,

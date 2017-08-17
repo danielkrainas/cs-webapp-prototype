@@ -170,3 +170,20 @@ $layout-toolbar-height: 50px;
   &.lg { height: 160px; }
   &.xl { height: 240px; }
 }
+
+.note {
+  margin: 20px auto;
+  padding: 0 15px;
+  max-width: 530px;
+
+  &::before {
+    content: 'Notes';
+    font-size: 30px;
+    line-height: 60px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    line-height: 20px;
+  }
+}
