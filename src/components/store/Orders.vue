@@ -45,6 +45,11 @@ export default {
           status: 'col-status',
           total: 'col-total',
         },
+        columnsDisplay: {
+          orderNumber: 'min_desktop',
+          gallery: 'min_tabletL',
+          status: 'not_mobile'
+        },
       },
     }
   },
