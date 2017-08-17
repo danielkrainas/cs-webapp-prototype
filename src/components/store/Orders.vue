@@ -15,13 +15,6 @@
         :options="tableOptions"
         ref="orderTable"></v-client-table>
     </div>
-    <div class="note">
-      <p>We can hook up the search box in the toolbar to the table's filter via
-         the table's setFilter(query) method. Then we should just hide the
-         provided search box I think.</p>
-      <p>The table can and should be refactored into a component wrapper that we
-         can reuse throughout.</p>
-    </div>
   </div>
 </template>
 
