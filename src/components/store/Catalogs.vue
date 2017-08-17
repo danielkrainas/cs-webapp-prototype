@@ -55,7 +55,7 @@ export default {
       return this.catalogs[this.currentCatalogIndex].products.map((product) => {
         return {
           product: product.name,
-          cost: product.whcc_cost.toFixed(2) || 0,
+          cost: (product.whcc_cost || 0).toFixed(2),
           markup: (product.cost - product.whcc_cost).toFixed(2) || 'N/A',
           price: (product.cost || product.totalCost).toFixed(2),
           delete: 'X',
