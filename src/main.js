@@ -207,6 +207,7 @@ const router = new VueRouter({
 /* TODO - these don't belong here... */
 require('./style/reset.css')
 require('./style/global.scss')
+require('./style/tables.scss')
 require('./style/animation.scss')
 
 window.app = new Vue({

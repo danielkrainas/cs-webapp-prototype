@@ -35,6 +35,7 @@ export default {
   },
   data () {
     return {
+      tableColumns: ['orderNumber', 'date', 'customer', 'gallery', 'status', 'total'],
       tableOptions: {
         dateColumns: ['date'],
         headings: {
@@ -74,65 +75,16 @@ export default {
         }
       })
     },
-    tableColumns () {
-      return ['orderNumber', 'date', 'customer', 'gallery', 'status', 'total']
-    },
   },
 }
 </script>
 
 <style lang="scss">
-@import 'src/style/colors';
-
-// sass-lint:disable-block class-name-format
-.VueTables--client {
-  display: flex;
-  flex-direction: column;
-
-  // Somewhat of a hack to hide the table's default search box. The CSS provided
-  // by the component only adds the class "row", which is pretty useless.
-  & > .row:first-child { // sass-lint:disable-line force-pseudo-nesting no-combinators max-line-length
-    display: none;
-  }
-
-  .table-responsive {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .VueTables__table {
-    width: 100%;
-    margin: 15px 0;
-
-    tr {
-      height: 30px;
-    }
-
-    th {
-      text-align: left;
-
-      .col-total {
-        text-align: right;
-      }
-    }
-
-    td {
-      padding: 8px 0;
-    }
-
-    thead {
-      border-bottom: 1px solid $color-accent;
-    }
-  }
-}
-
 .orders-list-content {
   .col-total {
     text-align: right;
   }
 }
-
-
 </style>
 
 <style lang="scss" scoped>
