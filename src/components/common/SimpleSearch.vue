@@ -1,16 +1,22 @@
 <template>
   <div class="search">
     <span class="fa fa-search search-icon"></span>
-    <input class="search-box" :placeholder="placeholder">
+    <input class="search-box"
+      ref="input"
+      :placeholder="placeholder"
+      :value="value"
+      @input="update($event.target.value)">
     </input>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['placeholder'],
-  data () {
-    return {}
+  props: ['placeholder', 'value'],
+  methods: {
+    update (value) {
+      this.$emit('input', value)
+    },
   },
 }
 </script>

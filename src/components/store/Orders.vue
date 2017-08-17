@@ -2,7 +2,9 @@
   <div class="store-orders">
     <div class="orders-list-toolbar toolbar">
       <div class="toolbar-section">
-        <simple-search placeholder="Search Orders"></simple-search>
+        <simple-search
+          placeholder="Search Orders"
+          @input="v => updateSearch(v)"></simple-search>
       </div>
     </div>
 
@@ -10,7 +12,8 @@
       <v-client-table
         :data="tableData"
         :columns="tableColumns"
-        :options="tableOptions"></v-client-table>
+        :options="tableOptions"
+        ref="orderTable"></v-client-table>
     </div>
     <div class="note">
       <p>We can hook up the search box in the toolbar to the table's filter via
@@ -48,14 +51,14 @@ export default {
         columnsDisplay: {
           orderNumber: 'min_desktop',
           gallery: 'min_tabletL',
-          status: 'not_mobile'
+          status: 'not_mobile',
         },
       },
     }
   },
   methods: {
-    formatDate (isoDateString) {
-      return moment(isoDateString)
+    updateSearch (query) {
+      this.$refs.orderTable.setFilter(query)
     },
   },
   computed: {
@@ -85,6 +88,12 @@ export default {
 .VueTables--client {
   display: flex;
   flex-direction: column;
+
+  // Somewhat of a hack to hide the table's default search box. The CSS provided
+  // by the component only adds the class "row", which is pretty useless.
+  & > .row:first-child { // sass-lint:disable-line force-pseudo-nesting no-combinators max-line-length
+    display: none;
+  }
 
   .table-responsive {
     display: flex;
