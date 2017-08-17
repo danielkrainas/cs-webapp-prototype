@@ -7,3 +7,21 @@
 .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+
+.slide-left-enter-active {
+  animation: slide-left 0.3s;
+}
+
+.slide-left-leave-active {
+  animation: slide-left 0.3s reverse;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
