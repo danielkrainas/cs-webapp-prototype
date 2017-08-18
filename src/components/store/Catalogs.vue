@@ -112,6 +112,7 @@ export default {
 
 .catalog-title__name {
   font-size: 18px;
+  padding-left: 15px;
 }
 
 .catalog-title__type {
