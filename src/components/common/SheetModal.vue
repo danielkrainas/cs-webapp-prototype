@@ -23,8 +23,8 @@
       <div v-if="show" class="sheet-modal-content">
         <slot></slot>
         <div class="modal-buttons">
-          <span class="button">{{ okButtonTitle }}</span>
-          <span class="button">{{ cancelButtonTitle }}</span>
+          <span class="button">{{ myOKTitle }}</span>
+          <span class="button">{{ myCancelTitle }}</span>
         </div>
       </div>
     </transition>
@@ -38,8 +38,8 @@ export default {
     return {
       show: false,
       runningAnimations: 0,
-      okButtonTitle: this.okTitle || 'OK',
-      cancelButtonTitle: this.cancelTitle || 'Cancel',
+      myOKTitle: this.okTitle || 'OK',
+      myCancelTitle: this.cancelTitle || 'Cancel',
     }
   },
 
