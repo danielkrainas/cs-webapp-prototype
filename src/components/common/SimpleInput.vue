@@ -1,9 +1,9 @@
 <template>
-  <div class="simple-input top">
-    <label v-if="this.label">{{ this.label }}</label>
+  <div class="simple-input">
+    <label v-if="myLabel">{{ myLabel }}</label>
     <div class="input-container">
       <span v-if="hasIcon" :class="myIconClass" class="fa input-icon"></span>
-      <input :class="hasIcon" name="gallery-url" :placeholder="myPlaceholder"></input>
+      <input :class="hasIcon" :placeholder="myPlaceholder"></input>
     </div>
   </div>
 </template>
