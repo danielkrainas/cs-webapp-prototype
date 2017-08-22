@@ -29,9 +29,14 @@ export default {
 .simple-input {
   margin: 15px 0;
   display: flex;
+  align-items: center;
+
+  label {
+    margin-right: 10px;
+  }
 
   input {
-    height: 40px;
+    height: 30px;
     font-size: 14px;
     padding: 10px;
     width: 100%;
