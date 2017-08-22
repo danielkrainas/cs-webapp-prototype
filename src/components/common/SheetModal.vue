@@ -22,6 +22,10 @@
       >
       <div v-if="show" class="sheet-modal-content">
         <slot></slot>
+        <div class="modal-buttons">
+          <span class="button">{{ okButtonTitle }}</span>
+          <span class="button">{{ cancelButtonTitle }}</span>
+        </div>
       </div>
     </transition>
   </div>
@@ -29,10 +33,13 @@
 
 <script>
 export default {
+  props: ['okTitle', 'cancelTitle'],
   data () {
     return {
       show: false,
       runningAnimations: 0,
+      okButtonTitle: this.okTitle || 'OK',
+      cancelButtonTitle: this.cancelTitle || 'Cancel',
     }
   },
 
@@ -105,6 +112,18 @@ export default {
   border-bottom: 1px solid $color-accent;
   z-index: $z-modal;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .button {
+    min-width: 80px;
+    justify-content: center;
+    margin: 0 10px;
+  }
 }
 
 </style>
