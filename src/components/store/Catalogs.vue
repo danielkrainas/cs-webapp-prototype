@@ -18,6 +18,7 @@
       </div>
     </div>
     <div class="catalog-content-container">
+      <router-view name="storeCatalogModal"></router-view>
       <transition name="slide-left">
         <div v-if="showNav" class="catalog-nav">
           <ol>
@@ -30,7 +31,6 @@
           </ol>
         </div>
       </transition>
-
       <div class="catalog-contents-list">
         <div class="catalog-header">
         </div>
@@ -108,6 +108,7 @@ export default {
 .catalog-content-container {
   @include flex-content(row);
   overflow: hidden;
+  position: relative;
 }
 
 .catalog-title__name {

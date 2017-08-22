@@ -33,6 +33,7 @@ import people from './components/people/People.vue'
 import store from './components/store/Store.vue'
 import storeOrders from './components/store/Orders.vue'
 import storeCatalogs from './components/store/Catalogs.vue'
+import storeCatalogCreate from './components/store/CatalogCreate.vue'
 import storeDiscounts from './components/store/Discounts.vue'
 import storeBanking from './components/store/Banking.vue'
 import storeTaxes from './components/store/Taxes.vue'
@@ -174,8 +175,16 @@ const routes = [{
     components: { storeContent: storeOrders },
   }, {
     path: 'catalogs',
-    name: 'storeCatalogs',
     components: { storeContent: storeCatalogs },
+    redirect: { name: 'storeCatalogs' },
+    children: [{
+      path: '',
+      name: 'storeCatalogs',
+    }, {
+      path: 'create',
+      name: 'storeCatalogCreate',
+      components: { storeCatalogModal: storeCatalogCreate }
+    }],
   }, {
     path: 'discounts',
     name: 'storeDiscounts',
