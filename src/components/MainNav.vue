@@ -81,7 +81,6 @@ export default {
 }
 
 .main-nav {
-  // width: 100%;
   flex-grow: 0;
   flex-shrink: 0;
   border-right: 1px solid $color-accent;
@@ -89,8 +88,9 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  // padding: 5px;
   font-size: 10px;
+  background-color: $color-app-bg;
+  z-index: $z-main-nav;
 
   .button {
     display: flex;

@@ -1,5 +1,6 @@
 <template>
   <div class="store-catalogs">
+    <router-view name="storeCatalogModal"></router-view>
     <div class="catalogs-toolbar toolbar">
       <div class="catalog-title-container">
         <span class="fa fa-chevron-down button" @click="toggleNav()"></span>
@@ -18,7 +19,6 @@
       </div>
     </div>
     <div class="catalog-content-container">
-      <router-view name="storeCatalogModal"></router-view>
       <transition name="slide-left">
         <div v-if="showNav" class="catalog-nav">
           <ol>
@@ -99,6 +99,7 @@ export default {
   display: flex;
   flex-direction: $direction;
   flex: 1 1;
+  position: relative;
 }
 
 .store-catalogs {

@@ -98,8 +98,7 @@ export default {
   position: absolute;
   width: 100%;
   top: 0;
-  padding: 30px;
-  display: flex;
+  padding: 15px;
   flex-direction: column;
   align-items: center;
   background-color: $color-app-bg;

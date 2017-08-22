@@ -42,6 +42,11 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
+.store-subnav {
+  z-index: $z-sub-nav;
+  background-color: $color-app-bg;
+}
+
 .nav-list {
   display: flex;
   justify-content: space-around;

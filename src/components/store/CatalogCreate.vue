@@ -1,6 +1,6 @@
 <template>
   <sheet-modal>
-    <div class="sheet-modal-content-inner-wrapper">
+    <div class="create-catalog">
       <h1>Create Catalog</h1>
       <simple-input label="Catalog Name"></simple-input>
     </div>
@@ -25,7 +25,8 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
-.sheet-modal-content-inner-wrapper {
+.create-catalog {
+  margin: 15px auto;
   width: 100%;
   max-width: 500px;
 }
