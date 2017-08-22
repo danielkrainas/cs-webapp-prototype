@@ -3,6 +3,11 @@
     <div class="create-catalog">
       <h1>Create Catalog</h1>
       <simple-input label="Catalog Name"></simple-input>
+      <checkbox
+        name="color-correction"
+        label="Add Color Correction"
+        >
+      </checkbox>
     </div>
   </sheet-modal>
 </template>
@@ -10,8 +15,10 @@
 <script>
 import SheetModal from '../common/SheetModal.vue'
 import SimpleInput from '../common/SimpleInput.vue'
+import Checkbox from '../common/Checkbox.vue'
 export default {
   components: {
+    Checkbox,
     SimpleInput,
     SheetModal,
   },

@@ -46,7 +46,10 @@ input {
   color: $color-font-default;
   border-radius: 5px;
   height: 20px;
-  flex-basis: 250px;
+
+  &[type='text'] {
+    flex-basis: 250px;
+  }
 }
 
 select {
