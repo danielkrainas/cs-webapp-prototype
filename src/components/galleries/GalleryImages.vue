@@ -1,5 +1,6 @@
 <template>
-  <div class="folder-images">
+  <div class="gallery-images">
+    <router-view name="galleryImagesModal"></router-view>
     <div class="folder-images-toolbar toolbar">
       <router-link :to="{ name: 'galleryImages' }" class="button">
         <div class="folder-name">
@@ -43,10 +44,11 @@ export default {
   display: flex;
 }
 
-.folder-images {
+.gallery-images {
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  position: relative;
 }
 
 .content {

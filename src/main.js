@@ -122,13 +122,25 @@ const routes = [{
           }, {
             path: 'upload',
             name: 'galleryUpload',
-            components: { galleryImagesContent: galleryUpload },
-            props: { galleryImagesContent: true },
+            components: {
+              galleryImagesContent: galleryImagesGrid,
+              galleryImagesModal: galleryUpload,
+            },
+            props: {
+              galleryImagesContent: true,
+              galleryContent: true,
+            },
           }, {
             path: 'download',
             name: 'galleryDownload',
-            components: { galleryImagesContent: galleryDownload },
-            props: { galleryImagesContent: true },
+            components: {
+              galleryImagesContent: galleryImagesGrid,
+              galleryImagesModal: galleryDownload,
+            },
+            props: {
+              galleryImagesContent: true,
+              galleryContent: true,
+            },
           }],
         }, {
           path: 'overview',

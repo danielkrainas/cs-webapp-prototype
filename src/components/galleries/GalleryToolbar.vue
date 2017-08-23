@@ -62,6 +62,8 @@ export default {
 @import '../../style/colors';
 
 .gallery-toolbar {
+  z-index: $z-sub-nav;
+  background-color: $color-app-bg;
   padding-left: 10px;
 }
 
