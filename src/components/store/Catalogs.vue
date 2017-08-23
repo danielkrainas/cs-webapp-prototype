@@ -8,6 +8,10 @@
         <span class="catalog-title__type">{{ currentCatalog.fullFilmentOptions }}</span>
       </div>
       <div class="catalog-tools">
+        <router-link :to="{ name: '' }" class="button">
+          <span class="fa fa-plus-square"></span>
+          <span>Add Product</span>
+        </router-link>
         <router-link :to="{ name: 'storeCatalogEdit' }" class="button">
           <span class="fa fa-pencil-square-o"></span>
           <span>Edit Catalog</span>
