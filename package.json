@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --hot --content-base build",
-    "build": "webpack --progress --hide-modules"
+    "build": "webpack --progress --hide-modules",
+    "build:drone": "webpack --hide-modules"
   },
   "author": "",
   "license": "ISC",

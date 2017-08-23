@@ -7,7 +7,7 @@ pipeline:
     image: node:8.3
     commands:
       - npm i --loglevel=error
-      - npm run build
+      - npm run build:drone
       #- npm run test
   #notify:
   #  image: plugins/slack
