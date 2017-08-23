@@ -29,12 +29,10 @@
 import SheetModal from '../common/SheetModal.vue'
 import SimpleInput from '../common/SimpleInput.vue'
 import Checkbox from '../common/Checkbox.vue'
-import Radio from '../common/Radio.vue'
 
 export default {
   components: {
     Checkbox,
-    Radio,
     SimpleInput,
     SheetModal,
   },
