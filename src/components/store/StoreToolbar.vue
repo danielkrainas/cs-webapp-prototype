@@ -45,11 +45,11 @@ export default {
 .store-subnav {
   z-index: $z-sub-nav;
   background-color: $color-app-bg;
+  justify-content: flex-end;
 }
 
 .nav-list {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   flex-grow: 1;
 }
