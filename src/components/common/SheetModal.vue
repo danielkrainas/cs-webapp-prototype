@@ -94,14 +94,6 @@ export default {
 <style lang="scss" scoped>
 @import '../../style/colors';
 
-.modal-background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: $z-modal-bg;
-  background-color: $color-modal-bg;
-}
-
 .sheet-modal-container {
   position: absolute;
   height: 100%;

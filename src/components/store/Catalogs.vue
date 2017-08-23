@@ -8,29 +8,44 @@
         <span class="catalog-title__type">{{ currentCatalog.fullFilmentOptions }}</span>
       </div>
       <div class="catalog-tools">
-        <router-link :to="{ name: 'storeCatalogCreate'}" class="button">
-          <span class="fa fa-plus-square"></span>
-          <span>New Catalog</span>
-        </router-link>
         <router-link :to="{ name: '' }" class="button">
           <span class="fa fa-trash"></span>
           <span>Delete Catalog</span>
         </router-link>
       </div>
     </div>
+
     <div class="catalog-content-container">
       <transition name="slide-left">
         <div v-if="showNav" class="catalog-nav">
           <ol>
-            <li v-for="(catalog, i) in catalogs"
-              @click="setCatalog(i)"
-              class="catalog-nav__item button__rollover">
-              <p class="catalog-nav__name">{{ catalog.displayName }}</p>
-              <p class="catalog-nav__type">{{ catalog.fullFilmentOptions }}</p>
-            </li>
+            <router-link
+              v-for="(catalog, i) in catalogs"
+              :to="{ name: 'storeCatalogSingle', params: { catalogId: catalog._id } }"
+              @click.native="toggleNav(false)"
+              >
+              <li class="catalog-nav__item button__rollover">
+                <p class="catalog-nav__name">{{ catalog.displayName }}</p>
+                <p class="catalog-nav__type">{{ catalog.fullFilmentOptions }}</p>
+              </li>
+            </router-link>
           </ol>
+          <router-link
+            :to="{ name: 'storeCatalogCreate'}"
+            class="button"
+            @click.native="toggleNav(false)">
+            <span class="fa fa-plus-square"></span>
+            <span>New Catalog</span>
+          </router-link>
         </div>
       </transition>
+      <transition name="fade">
+        <div v-if="showNav"
+          class="modal-background"
+          @click="toggleNav(false)">
+        </div>
+      </transition>
+
       <div class="catalog-contents-list">
         <div class="catalog-header">
         </div>
@@ -60,16 +75,20 @@ export default {
         },
       },
       catalogs: this.$store.state.catalogs,
-      currentCatalogIndex: 0,
       showNav: true,
     }
   },
   computed: {
     currentCatalog () {
-      return this.catalogs[this.currentCatalogIndex]
+      const catalogId = this.$route.params.catalogId
+      if (!catalogId) {
+        return this.catalogs[0]
+      } else {
+        return this.$store.getters.catalogById(catalogId)
+      }
     },
     tableData () {
-      return this.catalogs[this.currentCatalogIndex].products.map((product) => {
+      return this.currentCatalog.products.map((product) => {
         return {
           product: product.name,
           cost: (product.whcc_cost || 0).toFixed(2),
@@ -81,8 +100,17 @@ export default {
     },
   },
   methods: {
-    toggleNav () {
-      this.showNav = !this.showNav
+    toggleNav (val) {
+      if (typeof val === 'undefined') {
+        this.showNav = !this.showNav
+        return
+      }
+      // only use val to set if the user actually passed true or false
+      if (val === true) {
+        this.showNav = true
+      } else if (val === false) {
+        this.showNav = false
+      }
     },
     setCatalog (index) {
       this.currentCatalogIndex = index
@@ -123,8 +151,14 @@ export default {
 
 .catalog-nav {
   flex: 0 0 200px;
-  width: 200px;
+  width: 300px;
+  justify-content: space-between;
   border-right: 1px solid $color-accent;
+  position: absolute;
+  height: 100%;
+  background-color: $color-app-bg;
+  z-index: $z-modal - 5;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
 .catalog-nav__item {

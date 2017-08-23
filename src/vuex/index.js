@@ -33,6 +33,11 @@ const store = new Vuex.Store({
       const matches = s.orders.filter(g => g.id === id)
       return matches.length === 0 ? null : matches[0]
     },
+    catalogById: (s, g) => (id) => {
+      // Underscore _id here
+      const matches = s.catalogs.filter(g => g._id === id)
+      return matches.length === 0 ? null : matches[0]
+    },
   },
   mutations: {
     setCurrentGallery (state, gallery) {

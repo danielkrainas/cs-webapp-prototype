@@ -34,6 +34,7 @@ import store from './components/store/Store.vue'
 import storeOrders from './components/store/Orders.vue'
 import storeCatalogs from './components/store/Catalogs.vue'
 import storeCatalogCreate from './components/store/CatalogCreate.vue'
+import storeCatalogEdit from './components/store/CatalogEdit.vue'
 import storeDiscounts from './components/store/Discounts.vue'
 import storeBanking from './components/store/Banking.vue'
 import storeTaxes from './components/store/Taxes.vue'
@@ -193,9 +194,16 @@ const routes = [{
       path: '',
       name: 'storeCatalogs',
     }, {
+      path: ':catalogId',
+      name: 'storeCatalogSingle',
+    }, {
+      path: ':catalogId/edit',
+      name: 'storeCatalogEdit',
+      components: { storeCatalogModal: storeCatalogEdit },
+    }, {
       path: 'create',
       name: 'storeCatalogCreate',
-      components: { storeCatalogModal: storeCatalogCreate }
+      components: { storeCatalogModal: storeCatalogCreate },
     }],
   }, {
     path: 'discounts',

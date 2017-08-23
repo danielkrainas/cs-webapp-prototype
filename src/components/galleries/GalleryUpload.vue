@@ -4,8 +4,10 @@
     @cancel="cancel"
     @didClose="didClose"
     >
-    <div class="upload stub">
-      <h1>Upload Images</h1>
+    <div class="upload modal-content">
+      <section>
+        <h1>Upload Images</h1>
+      </section>
     </div>
   </sheet-modal>
 </template>
