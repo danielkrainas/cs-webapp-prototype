@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import ToggleButton from 'vue-js-toggle-button'
 import SimpleInput from './components/common/SimpleInput.vue'
 
-import App from './App.vue'
+import App from 'App.vue'
 import home from './components/Home.vue'
 
 import account from './components/account/Account.vue'
@@ -13,7 +13,7 @@ import accountPlan from './components/account/Plan.vue'
 import accountUser from './components/account/User.vue'
 import accountWeb from './components/account/Web.vue'
 
-import gallery from './components/galleries/gallery.vue'
+import gallery from './components/galleries/Gallery.vue'
 import galleryList from './components/galleries/GalleryList.vue'
 import gallerySingle from './components/galleries/GallerySingle.vue'
 import galleryImages from './components/galleries/GalleryImages.vue'
