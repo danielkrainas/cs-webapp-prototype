@@ -59,7 +59,6 @@ select {
   border-color: $color-accent;
 }
 
-
 // Generic classes
 
 .button__rollover {
@@ -90,7 +89,8 @@ select {
 }
 
 // Don't bounce on scroll
-html, body {
+html,
+body {
   overflow: hidden;
 }
 
@@ -145,6 +145,40 @@ $layout-toolbar-height: 50px;
     width: 500px;
   }
 }
+
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+
+  h1 {
+    font-size: 30px;
+    margin: 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $color-accent;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin: 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $color-accent;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 30px 0 14px;
+  }
+
+  section {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
 
 // Placeholders and stubs
 

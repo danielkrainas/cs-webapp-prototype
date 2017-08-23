@@ -4,13 +4,15 @@
     @cancel="cancel"
     @didClose="didClose"
     >
-    <div class="download">
-      <h1>Download Images</h1>
-      <checkbox
-        v-for="folder in folders"
-        :label="folder.name"
-        >
-      </checkbox>
+    <div class="download modal-content">
+      <section>
+        <h1>Download Images</h1>
+        <checkbox
+          v-for="folder in folders"
+          :label="folder.name"
+          >
+        </checkbox>
+      </section>
     </div>
   </sheet-modal>
 </template>
@@ -43,7 +45,7 @@ export default {
       }, {
         name: 'Last one!',
         id: '5',
-      }]
+      }],
     }
   },
   methods: {
