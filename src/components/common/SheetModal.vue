@@ -110,7 +110,7 @@ export default {
   background-color: $color-app-bg;
   border-bottom: 1px solid $color-accent;
   z-index: $z-modal;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
 }
 
 .modal-buttons {

@@ -158,7 +158,7 @@ export default {
   height: 100%;
   background-color: $color-app-bg;
   z-index: $z-modal - 5;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-default;
 }
 
 .catalog-nav__item {
