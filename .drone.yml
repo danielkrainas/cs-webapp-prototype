@@ -1,0 +1,18 @@
+workspace:
+  base: /opt
+  path: app
+
+pipeline:
+  build:
+    image: node:8.3
+    commands:
+      - npm i --loglevel=error
+      - npm run build
+      #- npm run test
+  #notify:
+  #  image: plugins/slack
+  #  secrets: [SLACK_WEBHOOK]
+  #  dummy: true
+  #  when:
+  #    branch: [master, dev]
+  #    status: [success, failure]
