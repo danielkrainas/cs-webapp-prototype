@@ -1,5 +1,9 @@
 <template>
-  <sheet-modal>
+  <sheet-modal :show="show"
+    @ok="confirm"
+    @cancel="cancel"
+    @didClose="didClose"
+    >
     <div class="create-catalog">
       <h1>Create Catalog</h1>
       <simple-input label="Catalog Name"></simple-input>
@@ -24,7 +28,19 @@ export default {
   },
   data () {
     return {
+      show: true,
     }
+  },
+  methods: {
+    confirm () {
+      this.show = false
+    },
+    cancel () {
+      this.show = false
+    },
+    didClose () {
+      window.history.back()
+    },
   },
 }
 </script>

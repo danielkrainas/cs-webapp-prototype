@@ -8,9 +8,9 @@
       @after-leave="afterLeave"
       >
       <div
-        v-if="show"
+        v-if="shouldShow"
         class="modal-background"
-        @click="close">
+        @click="doCancel">
       </div>
     </transition>
     <transition
@@ -20,11 +20,11 @@
       @before-leave="beforeLeave"
       @after-leave="afterLeave"
       >
-      <div v-if="show" class="sheet-modal-content">
+      <div v-if="shouldShow" class="sheet-modal-content">
         <slot></slot>
         <div class="modal-buttons">
-          <span class="button">{{ myOKTitle }}</span>
-          <span class="button">{{ myCancelTitle }}</span>
+          <span class="button" @click="doOK">{{ myOKTitle }}</span>
+          <span class="button" @click="doCancel">{{ myCancelTitle }}</span>
         </div>
       </div>
     </transition>
@@ -33,10 +33,10 @@
 
 <script>
 export default {
-  props: ['okTitle', 'cancelTitle'],
+  props: ['show', 'okTitle', 'cancelTitle'],
   data () {
     return {
-      show: false,
+      mounted: false,
       runningAnimations: 0,
       myOKTitle: this.okTitle || 'OK',
       myCancelTitle: this.cancelTitle || 'Cancel',
@@ -44,41 +44,48 @@ export default {
   },
 
   mounted () {
-    // Show on mount to trigger animations
-    this.show = true
+    this.mounted = true
 
     document.addEventListener('keydown', (e) => {
-      if (this.showing && e.keyCode === 27) {
-        this.close()
+      if (this.show && e.keyCode === 27) {
+        this.doCancel()
       }
     })
   },
 
   methods: {
-    close () {
-      this.show = false
-      this.$emit('willClose')
+    // Don't close directly. Instead, emit cancel / OK events and let the parent
+    // decide what to do. The parent may not WANT to close the dialog, i.e.
+    // because we need to validate data, or because we want to stay shown until
+    // some asynchronous task completes.
+    doOK () {
+      this.$emit('ok')
+    },
+    doCancel () {
+      this.$emit('cancel')
     },
     beforeLeave () {
       this.runningAnimations++
     },
     afterLeave () {
       this.runningAnimations--
-      console.log(this.runningAnimations)
-      if (!this.runningAnimations) {
+      if (this.runningAnimations <= 0 && !this.show) {
         this.$emit('didClose')
-        window.history.back()
       }
     },
     beforeEnter () {
       this.runningAnimations++
-      this.$emit('willShow')
     },
     afterEnter () {
       this.runningAnimations--
-      if (!this.runningAnimations) {
+      if (this.runningAnimations <= 0 && this.show) {
         this.$emit('didShow')
       }
+    },
+  },
+  computed: {
+    shouldShow () {
+      return this.show && this.mounted
     },
   },
 }
