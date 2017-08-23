@@ -7,11 +7,20 @@
     <div class="create-catalog">
       <h1>Create Catalog</h1>
       <simple-input label="Catalog Name"></simple-input>
-      <checkbox
-        name="color-correction"
-        label="Add Color Correction"
+
+      <radio
+        label="Catalog Type"
+        :options="typeOptions"
+        @change="changeCatalogType"
         >
-      </checkbox>
+      </radio>
+
+      <checkbox label="Make this catalog the default"></checkbox>
+
+      <div v-if="isAutoFulfill" class="lab-fulfill-options">
+        <checkbox label="Add Color Correction"></checkbox>
+        <checkbox label="Add Premium Packaging"></checkbox>
+      </div>
     </div>
   </sheet-modal>
 </template>
@@ -20,15 +29,27 @@
 import SheetModal from '../common/SheetModal.vue'
 import SimpleInput from '../common/SimpleInput.vue'
 import Checkbox from '../common/Checkbox.vue'
+import Radio from '../common/Radio.vue'
+
 export default {
   components: {
     Checkbox,
+    Radio,
     SimpleInput,
     SheetModal,
   },
   data () {
     return {
       show: true,
+      // TODO: replace Lab Fulfill and Self Fulfill with an enum from the model
+      typeOptions: [{
+        name: 'Auto Fulfillment',
+        value: 'Lab Fulfillment',
+      }, {
+        name: 'Custom Fulfillment',
+        value: 'Self Fulfillment',
+      }],
+      catalogType: 'Lab Fulfillment',
     }
   },
   methods: {
@@ -40,6 +61,17 @@ export default {
     },
     didClose () {
       window.history.back()
+    },
+    changeCatalogType (value) {
+      this.catalogType = value
+    },
+  },
+  computed: {
+    isAutoFulfill () {
+      return this.catalogType === 'Lab Fulfillment'
+    },
+    isCustoFulfill () {
+      return this.catalogType === 'Self Fulfillment'
     },
   },
 }
@@ -62,4 +94,13 @@ h1 {
   padding-bottom: 15px;
   width: 100%;
 }
+
+h2 {
+  font-size: 18px;
+  border-bottom: 1px solid $color-accent;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
 </style>
