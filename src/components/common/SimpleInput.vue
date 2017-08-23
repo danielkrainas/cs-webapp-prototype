@@ -36,7 +36,7 @@ export default {
   }
 
   input {
-    height: 30px;
+    height: 35px;
     font-size: 14px;
     padding: 10px;
     width: 100%;
@@ -44,6 +44,11 @@ export default {
 
     &.has-icon {
       text-indent: 27px;
+    }
+
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      color: $color-placeholder-text;
     }
   }
 
@@ -55,7 +60,7 @@ export default {
 
   .input-icon {
     position: absolute;
-    top: 13px;
+    top: 10px;
     left: 13px;
     z-index: 10;
     color: $color-accent;
