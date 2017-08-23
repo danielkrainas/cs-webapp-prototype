@@ -4,16 +4,23 @@
     @cancel="cancel"
     @didClose="didClose"
     >
-    <div class="create-catalog modal-content">
-      <h1>Create Catalog</h1>
-      <simple-input label="Catalog Name"></simple-input>
+    <div class="edit-catalog modal-content">
+      <section>
+        <h1>Edit Catalog</h1>
+        <simple-input label="Catalog Name"></simple-input>
 
-      <checkbox label="Make this catalog the default"></checkbox>
+        <checkbox label="Make this catalog the default"></checkbox>
 
-      <div v-if="isAutoFulfill" class="lab-fulfill-options">
-        <checkbox label="Add Color Correction"></checkbox>
-        <checkbox label="Add Premium Packaging"></checkbox>
-      </div>
+        <div v-if="isAutoFulfill" class="lab-fulfill-options">
+          <checkbox label="Add Color Correction"></checkbox>
+          <checkbox label="Add Premium Packaging"></checkbox>
+        </div>
+
+      </section>
+      <router-link :to="{ name: '' }" class="button">
+        <span class="fa fa-trash"></span>
+        <span>Delete Catalog</span>
+      </router-link>
     </div>
   </sheet-modal>
 </template>
@@ -49,7 +56,7 @@ export default {
   },
   computed: {
     isAutoFulfill () {
-      return this.catalogType === 'Lab Fulfillment'
+      return this.catalogType === 'Lab Fulfillment' || true
     },
     isCustoFulfill () {
       return this.catalogType === 'Self Fulfillment'
@@ -60,11 +67,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../style/colors';
-
-.create-catalog {
-  margin: 15px auto;
-  width: 100%;
-  max-width: 500px;
-}
 
 </style>

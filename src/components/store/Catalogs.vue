@@ -8,9 +8,9 @@
         <span class="catalog-title__type">{{ currentCatalog.fullFilmentOptions }}</span>
       </div>
       <div class="catalog-tools">
-        <router-link :to="{ name: '' }" class="button">
-          <span class="fa fa-trash"></span>
-          <span>Delete Catalog</span>
+        <router-link :to="{ name: 'storeCatalogEdit' }" class="button">
+          <span class="fa fa-pencil-square-o"></span>
+          <span>Edit Catalog</span>
         </router-link>
       </div>
     </div>
