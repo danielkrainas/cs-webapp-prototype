@@ -9,6 +9,14 @@ pipeline:
       - npm i --loglevel=error
       - npm run build:drone
       #- npm run test
+
+  ecr:
+    image: plugins/ecr
+    repo: 224494701446.dkr.ecr.us-west-2.amazonaws.com/webapp
+    tags: latest
+    # MUST specify region here. We use west-2. Default is east-1 AFAIK -db.
+    secrets: [ECR_ACCESS_KEY, ECR_SECRET_KEY, ECR_REGION]
+
   #notify:
   #  image: plugins/slack
   #  secrets: [SLACK_WEBHOOK]

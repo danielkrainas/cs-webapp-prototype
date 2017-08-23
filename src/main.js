@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import ToggleButton from 'vue-js-toggle-button'
 import SimpleInput from './components/common/SimpleInput.vue'
 
-import App from 'App.vue'
+import App from './app.vue'
 import home from './components/Home.vue'
 
 import account from './components/account/Account.vue'
