@@ -10,6 +10,7 @@
         <checkbox
           v-for="folder in folders"
           :label="folder.name"
+          :key="folder.id"
           >
         </checkbox>
       </section>

@@ -27,6 +27,7 @@
               v-for="(catalog, i) in catalogs"
               :to="{ name: 'storeCatalogSingle', params: { catalogId: catalog._id } }"
               @click.native="toggleNav(false)"
+              :key="catalog._id"
               >
               <li class="catalog-nav__item button__rollover">
                 <p class="catalog-nav__name">{{ catalog.displayName }}</p>
