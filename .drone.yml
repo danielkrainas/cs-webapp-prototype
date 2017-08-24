@@ -16,6 +16,9 @@ pipeline:
     tags: latest
     # MUST specify region here. We use west-2. Default is east-1 AFAIK -db.
     secrets: [ECR_ACCESS_KEY, ECR_SECRET_KEY, ECR_REGION]
+    when:
+      branch: [master, dev]
+      status: [success]
 
   #notify:
   #  image: plugins/slack
