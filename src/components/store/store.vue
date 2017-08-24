@@ -1,12 +1,14 @@
 <template>
   <div class="store">
     <store-toolbar></store-toolbar>
-    <router-view name="storeContent"></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view name="storeContent"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import storeToolbar from './StoreToolbar.vue'
+import storeToolbar from './store-toolbar.vue'
 
 export default {
   components: {

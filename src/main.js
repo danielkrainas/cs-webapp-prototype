@@ -1,46 +1,45 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ToggleButton from 'vue-js-toggle-button'
-import SimpleInput from './components/common/SimpleInput.vue'
+import SimpleInput from './components/common/simple-input.vue'
 
 import App from './app.vue'
-import home from './components/Home.vue'
+import Home from './components/home.vue'
+import Help from './components/help.vue'
 
-import account from './components/account/Account.vue'
-import accountAmbassador from './components/account/Ambassador.vue'
-import accountEmail from './components/account/Email.vue'
-import accountPlan from './components/account/Plan.vue'
-import accountUser from './components/account/User.vue'
-import accountWeb from './components/account/Web.vue'
+import account from './components/account/account.vue'
+import accountAmbassador from './components/account/ambassador.vue'
+import accountEmail from './components/account/email.vue'
+import accountPlan from './components/account/plan.vue'
+import accountUser from './components/account/user.vue'
+import accountWeb from './components/account/web.vue'
 
-import gallery from './components/galleries/Gallery.vue'
-import galleryList from './components/galleries/GalleryList.vue'
-import gallerySingle from './components/galleries/GallerySingle.vue'
-import galleryImages from './components/galleries/GalleryImages.vue'
-import galleryImagesGrid from './components/galleries/GalleryImagesGrid.vue'
-import gallerySettings from './components/galleries/GallerySettings.vue'
-import galleryShare from './components/galleries/GalleryShare.vue'
-import galleryCreate from './components/galleries/GalleryCreate.vue'
-import galleryUpload from './components/galleries/GalleryUpload.vue'
-import galleryDownload from './components/galleries/GalleryDownload.vue'
+import analyticsOverview from './components/analytics/overview.vue'
+import analyticsFavorites from './components/analytics/favorites.vue'
+import analyticsVisitors from './components/analytics/visitors.vue'
 
-import analyticsOverview from './components/analytics/Overview.vue'
-import analyticsFavorites from './components/analytics/Favorites.vue'
-import analyticsVisitors from './components/analytics/Visitors.vue'
+import gallery from './components/galleries/gallery.vue'
+import galleryList from './components/galleries/gallery-list.vue'
+import gallerySingle from './components/galleries/gallery-single.vue'
+import galleryImages from './components/galleries/gallery-images.vue'
+import galleryImagesGrid from './components/galleries/gallery-images-grid.vue'
+import gallerySettings from './components/galleries/gallery-settings.vue'
+import galleryShare from './components/galleries/gallery-share.vue'
+import galleryCreate from './components/galleries/gallery-create.vue'
+import galleryUpload from './components/galleries/gallery-upload.vue'
+import galleryDownload from './components/galleries/gallery-download.vue'
 
-import people from './components/people/People.vue'
+import people from './components/people/people.vue'
 
-import store from './components/store/Store.vue'
-import storeOrders from './components/store/Orders.vue'
-import storeCatalogs from './components/store/Catalogs.vue'
-import storeCatalogCreate from './components/store/CatalogCreate.vue'
-import storeCatalogEdit from './components/store/CatalogEdit.vue'
-import storeDiscounts from './components/store/Discounts.vue'
-import storeBanking from './components/store/Banking.vue'
-import storeTaxes from './components/store/Taxes.vue'
-import storeShipping from './components/store/Shipping.vue'
-
-import help from './components/Help.vue'
+import store from './components/store/store.vue'
+import storeOrders from './components/store/orders.vue'
+import storeCatalogs from './components/store/catalogs.vue'
+import storeCatalogCreate from './components/store/catalog-create.vue'
+import storeCatalogEdit from './components/store/catalog-edit.vue'
+import storeDiscounts from './components/store/discounts.vue'
+import storeBanking from './components/store/banking.vue'
+import storeTaxes from './components/store/taxes.vue'
+import storeShipping from './components/store/shipping.vue'
 
 import DataStore from './vuex'
 import { ClientTable } from 'vue-tables-2'
@@ -54,7 +53,7 @@ Vue.component('simple-input', SimpleInput)
 const routes = [{
   path: '/',
   name: 'home',
-  component: home,
+  component: Home,
 }, {
   path: '/account',
   name: 'account',
@@ -225,7 +224,7 @@ const routes = [{
 }, {
   path: '/help',
   name: 'help',
-  component: help,
+  component: Help,
 }]
 /* eslint-enable indent */
 

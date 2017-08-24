@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import accountToolbar from './AccountToolbar.vue'
+import accountToolbar from './account-toolbar.vue'
 
 export default {
   components: {

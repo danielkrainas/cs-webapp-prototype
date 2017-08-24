@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import simpleSearch from '../common/SimpleSearch.vue'
+import simpleSearch from '../common/simple-search.vue'
 
 export default {
   components: {

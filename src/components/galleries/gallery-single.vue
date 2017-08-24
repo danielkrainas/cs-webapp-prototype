@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import galleryToolbar from './GalleryToolbar.vue'
+import galleryToolbar from './gallery-toolbar.vue'
 
 export default {
   components: {

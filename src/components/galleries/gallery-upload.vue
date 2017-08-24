@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import SheetModal from '../common/SheetModal.vue'
+import SheetModal from '../common/sheet-modal.vue'
 
 export default {
   props: ['galleryId'],

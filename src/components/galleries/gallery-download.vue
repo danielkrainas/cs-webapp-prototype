@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Checkbox from '../common/Checkbox.vue'
-import SheetModal from '../common/SheetModal.vue'
+import Checkbox from '../common/checkbox.vue'
+import SheetModal from '../common/sheet-modal.vue'
 
 export default {
   props: ['galleryId'],

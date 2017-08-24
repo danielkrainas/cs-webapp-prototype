@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import SheetModal from '../common/SheetModal.vue'
-import SimpleInput from '../common/SimpleInput.vue'
-import Checkbox from '../common/Checkbox.vue'
+import SheetModal from '../common/sheet-modal.vue'
+import SimpleInput from '../common/simple-input.vue'
+import Checkbox from '../common/checkbox.vue'
 
 export default {
   components: {
