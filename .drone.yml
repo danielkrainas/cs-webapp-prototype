@@ -10,12 +10,21 @@ pipeline:
       - npm run build:drone
       #- npm run test
 
-  ecr:
+  publish:
     image: plugins/ecr
     repo: 224494701446.dkr.ecr.us-west-2.amazonaws.com/webapp
     tags: latest
     # MUST specify region here. We use west-2. Default is east-1 AFAIK -db.
     secrets: [ECR_ACCESS_KEY, ECR_SECRET_KEY, ECR_REGION]
+    when:
+      branch: [master, dev]
+      status: [success]
+  deploy:
+    image: josmo/drone-rancher
+    url: http://rancher.dev.cloudspot.io
+    confirm: true
+    secrets: [RANCHER_ACCESS_KEY, RANCHER_SECRET_KEY]
+    service: experiment/webapp
     when:
       branch: [master, dev]
       status: [success]
