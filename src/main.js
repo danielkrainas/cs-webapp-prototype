@@ -1,3 +1,4 @@
+import config from 'runtime/config'
 import App from './app.vue'
 
 import modHome from './home'
@@ -11,7 +12,7 @@ import modShared, {
   makeBootstrapper,
 } from './shared'
 
-const bootstrap = makeBootstrapper()
+const bootstrap = makeBootstrapper(config)
 
 initializeModules(bootstrap, [
   modShared,
