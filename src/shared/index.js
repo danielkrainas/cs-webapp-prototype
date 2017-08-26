@@ -1,3 +1,4 @@
+import axios from 'axios-es6/dist/axios'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ToggleButton from 'vue-js-toggle-button'
@@ -13,15 +14,19 @@ import SimpleSearchComponent from './components/simple-search.vue'
 
 import Store from './store'
 import { routesToRouterConfig } from './util'
+import { axiosRequestRewrite } from './network'
 
 export * from './util'
+export * from './network'
 
 export default function moduleInit (bootstrap) {
   bootstrap.use(genericService('routes', {}))
+  bootstrap.use(genericService('axios', axios))
   bootstrap.use(genericService('Vue', Vue))
   bootstrap.use(registerStoreConfig())
   bootstrap.use(registerThirdPartyVueComponents())
   bootstrap.use(registerSharedComponents(ToggleButton))
+  bootstrap.use(axiosRequestRewrite())
 
   // NOTE:(dk) needs to be lower priority so modules can modify store configuration
   bootstrap.use(storeService(Store), { priority: -1000 })
