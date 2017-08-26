@@ -73,6 +73,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      'shared': path.resolve(__dirname, './src/shared'),
       'runtime/config': path.resolve(__dirname, './config/env/' + (process.env.NODE_ENV || 'development')),
     },
   },

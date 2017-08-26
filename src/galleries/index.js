@@ -1,5 +1,5 @@
 import { keyBy } from 'lodash'
-import { registerRoute } from '../shared'
+import { registerRoute } from 'shared'
 import { generateTestGalleries } from './mock'
 
 import modAnalytics from './analytics'

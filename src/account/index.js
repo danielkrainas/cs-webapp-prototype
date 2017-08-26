@@ -1,4 +1,4 @@
-import { registerRoute } from '../shared'
+import { registerRoute } from 'shared'
 
 import AccountComponent from './components/account.vue'
 import AmbassadorOverviewComponent from './components/ambassador.vue'

@@ -1,6 +1,6 @@
-import { registerRoute } from '../shared'
-import mockOrders from '../shared/store/mock-data/orders'
-import mockCatalogs from '../shared/store/mock-data/pricesheets'
+import { registerRoute } from 'shared'
+import mockOrders from 'shared/store/mock-data/orders'
+import mockCatalogs from 'shared/store/mock-data/pricesheets'
 
 import StoreComponent from './components/store.vue'
 import OrdersComponent from './components/orders.vue'

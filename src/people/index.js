@@ -1,4 +1,4 @@
-import { registerRoute } from '../shared'
+import { registerRoute } from 'shared'
 
 import PeopleComponent from './components/people.vue'
 

@@ -1,4 +1,4 @@
-import { registerSubRoutes } from '../../shared'
+import { registerSubRoutes } from 'shared'
 
 import analyticsOverview from './components/overview.vue'
 import analyticsFavorites from './components/favorites.vue'

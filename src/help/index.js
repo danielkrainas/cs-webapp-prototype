@@ -1,4 +1,4 @@
-import { registerRoute } from '../shared'
+import { registerRoute } from 'shared'
 import HelpComponent from './components/help.vue'
 
 export default function moduleInit (bootstrap) {

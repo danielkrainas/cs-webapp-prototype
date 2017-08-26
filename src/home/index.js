@@ -1,4 +1,4 @@
-import { registerRoute } from '../shared'
+import { registerRoute } from 'shared'
 import Home from './components/home.vue'
 
 export default function moduleInit (bootstrap) {
