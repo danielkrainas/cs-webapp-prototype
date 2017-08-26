@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <main-nav></main-nav>
+    <appnav></appnav>
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -8,17 +8,12 @@
 </template>
 
 <script>
-import mainNav from './components/main-nav.vue'
-
+// components: {
+// mainNav,
+// },
 export default {
   name: 'app',
-  components: {
-    mainNav,
-  },
-  data () {
-    return {
-    }
-  },
+  data: () => ({}),
 }
 </script>
 
