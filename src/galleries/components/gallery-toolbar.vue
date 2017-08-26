@@ -25,7 +25,12 @@ export default {
       return this.$route.params.galleryId
     },
     galleryName () {
-      return this.$store.getters.galleryById(this.galleryId).name
+      const gallery = this.$store.getters.galleryById(this.galleryId)
+      if (!gallery) {
+        return ''
+      }
+
+      return gallery.name
     },
   },
   methods: {

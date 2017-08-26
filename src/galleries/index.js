@@ -1,3 +1,4 @@
+import { keyBy } from 'lodash'
 import { registerRoute } from '../shared'
 import { generateTestGalleries } from './mock'
 
@@ -24,14 +25,12 @@ export default function moduleInit (bootstrap) {
 export function configureStore (config, { storeConfig }) {
   Object.assign(storeConfig.state, {
     galleries: [],
+    galleryById: {},
   })
 
   Object.assign(storeConfig.getters, {
     /* Fetch one gallery by ID */
-    galleryById: (s, g) => (id) => {
-      const matches = s.galleries.filter(g => g.id === id)
-      return matches.length === 0 ? null : matches[0]
-    },
+    galleryById: (s, g) => (id) => s.galleryById[id] || null,
   })
 
   Object.assign(storeConfig.mutations, {
@@ -41,6 +40,7 @@ export function configureStore (config, { storeConfig }) {
 
     initGalleries (state) {
       state.galleries = generateTestGalleries(20)
+      state.galleryById = keyBy(state.galleries, 'id')
     },
   })
 }
@@ -69,6 +69,16 @@ export function registerRoutes (config, { routes }) {
         path: '',
         name: 'gallerySingle',
         redirect: { name: 'galleryImages' },
+      }, {
+        path: 'settings',
+        name: 'gallerySettings',
+        components: { galleryDetails: EditGallerySettingsComponent },
+        props: { galleryDetails: true },
+      }, {
+        path: 'share',
+        name: 'galleryShare',
+        components: { galleryDetails: ShareGalleryComponent },
+        props: { galleryDetails: true },
       }, {
         path: 'images',
         redirect: { name: 'galleryImages' },
@@ -106,22 +116,6 @@ export function registerRoutes (config, { routes }) {
             galleryContent: true,
           },
         }],
-      }],
-    }, {
-      path: ':galleryId',
-      name: 'gallerySingle',
-      components: { galleryContent: SingleGalleryComponent },
-      props: { galleryContent: true },
-      children: [{
-        path: 'settings',
-        name: 'gallerySettings',
-        components: { galleryDetails: EditGallerySettingsComponent },
-        props: { galleryDetails: true },
-      }, {
-        path: 'share',
-        name: 'galleryShare',
-        components: { galleryDetails: ShareGalleryComponent },
-        props: { galleryDetails: true },
       }],
     }],
   })
