@@ -5,10 +5,15 @@ import modAnalytics from './analytics'
 
 import GalleriesComponent from './components/gallery.vue'
 import GalleryListComponent from './components/gallery-list.vue'
-import ViewGalleryComponent from './components/gallery-single.vue'
+import SingleGalleryComponent from './components/gallery-single.vue'
 import CreateGalleryComponent from './components/gallery-create.vue'
 import EditGallerySettingsComponent from './components/gallery-settings.vue'
 import ShareGalleryComponent from './components/gallery-share.vue'
+import GalleryImagesComponent from './components/gallery-images.vue'
+import GalleryImagesGridComponent from './components/gallery-images-grid.vue'
+
+import GalleryUploadComponent from './components/gallery-upload.vue'
+import GalleryDownloadComponent from './components/gallery-download.vue'
 
 export default function moduleInit (bootstrap) {
   bootstrap.use(registerRoutes)
@@ -58,7 +63,54 @@ export function registerRoutes (config, { routes }) {
       components: { galleryContent: CreateGalleryComponent },
     }, {
       path: ':galleryId',
-      components: { galleryContent: ViewGalleryComponent },
+      components: { galleryContent: SingleGalleryComponent },
+      props: { galleryContent: true },
+      children: [{
+        path: '',
+        name: 'gallerySingle',
+        redirect: { name: 'galleryImages' },
+      }, {
+        path: 'images',
+        redirect: { name: 'galleryImages' },
+        components: { galleryDetails: GalleryImagesComponent },
+        children: [{
+          path: '',
+          name: 'galleryImages',
+          components: { galleryImagesContent: GalleryImagesGridComponent },
+          props: { galleryImagesContent: true },
+        }, {
+          path: ':folderId',
+          name: 'folderImages',
+          components: { galleryImagesContent: GalleryImagesGridComponent },
+          props: { galleryImagesContent: true },
+        }, {
+          path: 'upload',
+          name: 'galleryUpload',
+          components: {
+            galleryImagesContent: GalleryImagesGridComponent,
+            galleryImagesModal: GalleryUploadComponent,
+          },
+          props: {
+            galleryImagesContent: true,
+            galleryContent: true,
+          },
+        }, {
+          path: 'download',
+          name: 'galleryDownload',
+          components: {
+            galleryImagesContent: GalleryImagesGridComponent,
+            galleryImagesModal: GalleryDownloadComponent,
+          },
+          props: {
+            galleryImagesContent: true,
+            galleryContent: true,
+          },
+        }],
+      }],
+    }, {
+      path: ':galleryId',
+      name: 'gallerySingle',
+      components: { galleryContent: SingleGalleryComponent },
       props: { galleryContent: true },
       children: [{
         path: 'settings',
